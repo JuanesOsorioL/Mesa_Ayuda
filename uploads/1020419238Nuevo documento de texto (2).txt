@@ -1,0 +1,239 @@
+<html>
+
+<head>
+    <title>Google Maps :: Multiple Markers</title>
+
+    <style>
+        #imgmarker {
+            margin: 0;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="map" style="height: 100%; width: 100%;" />
+
+    <script type="text/javascript">
+
+        let coor = { lat: 4.713297509350994, lng: -74.07280195438338 };
+        let locations = null;
+        let controlMarkeOne = false;
+     
+
+
+let markerseleccionado;
+
+       let markers;
+//let marker;
+        let markerOne;
+      //  let local;
+        let img = [];
+        let mapa;
+    
+
+        function iniciar() {
+            if (locations === null) { window.parent.postMessage("hello", "https://editor.wix.com"); }
+
+            window.onmessage = (event) => {
+
+                if (event.data) {
+
+                    switch (event.data.funcion) {
+
+                        case "cargar":
+                            mapa = new google.maps.Map(document.getElementById('map'),
+                                {
+                                    zoom: 11,
+                                    streetViewControl: false,
+                                    center: coor
+                                });
+                            img = event.data.img;
+                          console.log("cargado");
+                            break;
+
+
+                        case "mostrardatos":
+
+                             locations = event.data.array;
+
+                            if (controlMarkeOne) {
+                                markerOne.setMap(null);
+                                controlMarkeOne = false;
+                            }
+
+                            if (markers) {
+                                markers.forEach(element => {
+                                    element.setMap(null);
+                                });
+                            } 
+
+
+
+                            markers = locations.map(function (location) {
+
+                                const infowindow = mostrar(location);
+
+                                let marker = new google.maps.Marker({
+                                    position: location.position,
+                                    icon: img.imgNegra,
+                                    title: location.title,
+                                    map: mapa
+                                })
+
+                                marker.addListener("mouseover", () => {
+                                    infowindow.open(mapa, marker);
+                                });
+
+                                marker.addListener("mouseout", () => {
+                                    infowindow.close(mapa, marker);
+                                });  
+
+
+                                marker.addListener("click", () => {
+                                  /*   if (controlMarkeOne) {
+                                        markerOne.setMap(null);
+                                        controlMarkeOne = false;
+                                    } */
+
+                                   // marker.google.maps. 
+
+if (markerseleccionado) {
+    markerseleccionado.setIcon(img.imgNegra)
+}
+
+                                   marker.setIcon(img.imgColor) 
+                                   markerseleccionado=marker ;  
+                                   window.parent.postMessage(location.codigo, "https://editor.wix.com");
+                                  //let local = event.data.array;
+                                 /*    markerOne = new google.maps.Marker({
+                                        position: location.position,
+                                        icon: img.imgColor,
+                                        map: mapa
+                                    });
+                                    controlMarkeOne = true;
+                
+                                    window.parent.postMessage(location.codigo, "https://editor.wix.com");
+
+
+                                    markerOne.addListener("mouseover", () => {
+                                        infowindow.open(mapa, markerOne);
+                                    });
+
+                                    markerOne.addListener("mouseout", () => {
+                                        infowindow.close(mapa, markerOne);
+
+                                    }); */
+
+                                });
+                               return marker;
+                            }) 
+
+                            break;
+
+
+                        case "una":
+                            local = event.data.array;
+                         
+                          //  const infowindow = mostrar(local);
+
+                         /*    if (controlMarkeOne) {
+                                markerOne.setMap(null);
+                                controlMarkeOne = false;
+                            }
+ */
+
+ if (markerseleccionado) {
+    markerseleccionado.setIcon(img.imgNegra)
+}
+
+console.log(local);
+console.log(markers);
+markers.forEach((item)=>{
+    if (item.title===local.title) {
+        item.setIcon(img.imgColor)
+        markerseleccionado=item;
+    }
+})
+
+
+
+                            /* markerOne = new google.maps.Marker({
+                                position: local.position,
+                                icon: img.imgColor,
+                                map: mapa
+
+                            });
+                            controlMarkeOne = true;
+
+                            markerOne.addListener("mouseover", () => {
+                                infowindow.open(mapa, markerOne);
+                            });
+
+                            markerOne.addListener("mouseout", () => {
+                                infowindow.close(mapa, markerOne);
+
+                            }); */
+
+                            break;
+
+                        default:
+                            break;
+                    }
+
+
+                    function mostrar(location) {
+                        const contentString = '<div id="content">' +
+                            '<div id="siteNotice">' +
+                            "</div>" +
+                            `<h1 id="firstHeading" class="firstHeading">${location.title}</h1>` +
+                            '<div id="bodyContent">' +
+                            `<p><b>${location.title}</b>, ${location.notas} <b>335&#160;km</b>,</p>` +
+                            `<img id="imgmarker" src="${location.img}" alt="${location.title}">` +
+
+                            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+                            "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+                            "(last visited June 22, 2009).</p>" +
+                            "</div>" +
+                            "</div>";
+
+                        const infowindow = new google.maps.InfoWindow({
+                            content: contentString,
+                            maxWidth: 400,
+                        });
+
+                        return infowindow;
+                    }
+                }
+            }
+        };
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcPAP7qL0bBuZpolRVT63PFoZz9M7cLCk&callback=iniciar"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+https://24460d0a-d02e-45d6-b46a-04e89abf834f.htmlcomponentservice.com/get_draft
+
+https://cmadrin-wixsite-com.filesusr.com/html/*
+
+https://cmadrin-wixsite-com.filesusr.com/html/24460d_12ffb7f2054ee610ef508239d881b95e.html
+
+
+https://ac512792-1d64-41b1-b6d2-f633e84cb7b6.filesusr.com/html/24460d_12ffb7f2054ee610ef508239d881b95e.html
+
+
+
+
+
