@@ -27,24 +27,47 @@ header .header--logo a .header__a--img {
 header .header--menu {
   padding-top: 17px;
   text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header .header--menu:hover .header--nav {
+  right: 20%;
 }
 
 header .header--menu span {
-  z-index: 2;
   color: #ffffff;
 }
 
 header .header--menu .header--nav {
-  z-index: 0;
-  background-color: lightcoral;
-  width: 100%;
-  left: 0px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #343a40;
+  width: 80%;
+  right: 100%;
   top: 50px;
   position: absolute;
 }
 
 header .header--menu .header--nav .nav--ul {
+  padding-left: 10px;
+  margin: 0px 40px 0px 0px;
+  text-align: left;
   background-color: #a3320b;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li {
+  padding: 10px 0px;
+  list-style: none;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li a:hover .nav__ul--li {
+  background-color: #ffc9b7;
 }
 
 header .header--loguin {
