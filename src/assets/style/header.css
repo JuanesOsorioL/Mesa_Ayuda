@@ -1,89 +1,136 @@
-@media (min-width: 769px) and (max-width: 1024px) {
-  header {
-    background-color: #6b0504;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    height: 50px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  header .header--logo {
-    margin: 7px 0px 0px 6px;
-  }
-  header .header--logo a .header__a--img {
-    width: 36px;
-    height: 36px;
-  }
+header {
+  background-color: #6b0504;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header--logo {
+  margin: 7px 0px 0px 6px;
+}
+
+header .header--logo a .header__a--img {
+  width: 36px;
+  height: 36px;
+}
+
+header .header--menu {
+  padding-top: 17px;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header .header--menu:hover .header--nav {
+  left: 0%;
+}
+
+header .header--menu span {
+  color: #ffffff;
+}
+
+header .header--menu .header--nav {
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #343a40;
+  width: 80%;
+  left: -100%;
+  top: 50px;
+  position: absolute;
+}
+
+header .header--menu .header--nav .nav--ul {
+  padding-left: 10px;
+  margin: 0px 40px 0px 0px;
+  text-align: left;
+  background-color: #a3320b;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li {
+  padding: 10px 0px;
+  list-style: none;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li a:hover .nav__ul--li {
+  background-color: #ffc9b7;
+}
+
+header .header--loguin {
+  margin: 5px 9px 0px 10px;
+  width: 36px;
+  height: 43px;
+}
+
+header .header--loguin:hover .header--ventanaLoguin {
+  visibility: initial;
+}
+
+header .header--loguin .header--img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50px;
+}
+
+header .header--loguin .header--ventanaLoguin {
+  visibility: hidden;
+  height: 40px;
+  width: 68px;
+  position: relative;
+  top: 3px;
+  right: 30px;
+}
+
+header .header--loguin .header--ventanaLoguin a {
+  color: #000000;
+  padding: 3px 0px;
+  float: right;
+  text-decoration: none;
+}
+
+header .header--loguin .header--ventanaLoguin a:hover .nav--ul {
+  text-decoration: underline;
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
   header .header--menu {
-    padding-top: 17px;
-    text-align: center;
-    -webkit-transition: 1s;
-    transition: 1s;
-  }
-  header .header--menu:hover .header--nav {
-    right: 20%;
+    padding-top: 13px;
   }
   header .header--menu span {
-    color: #ffffff;
+    display: none;
   }
   header .header--menu .header--nav {
-    -webkit-transition: 1s;
-    transition: 1s;
-    background-color: #343a40;
-    width: 80%;
-    right: 100%;
-    top: 50px;
-    position: absolute;
+    width: 100%;
+    position: initial;
+    -webkit-transition: 0s;
+    transition: 0s;
+    background-color: initial;
+    right: 0%;
+    top: 0px;
   }
   header .header--menu .header--nav .nav--ul {
-    padding-left: 10px;
-    margin: 0px 40px 0px 0px;
-    text-align: left;
-    background-color: #a3320b;
+    padding-left: 0px;
+    margin: 0px;
+    text-align: center;
+    background-color: initial;
   }
   header .header--menu .header--nav .nav--ul .nav__ul--li {
-    padding: 10px 0px;
-    list-style: none;
+    display: inline;
+    padding: 0px;
   }
   header .header--menu .header--nav .nav--ul .nav__ul--li a {
-    color: #000000;
-    text-decoration: none;
-  }
-  header .header--menu .header--nav .nav--ul .nav__ul--li a:hover .nav__ul--li {
-    background-color: #ffc9b7;
-  }
-  header .header--loguin {
-    margin: 5px 9px 0px 10px;
-    width: 36px;
-    height: 43px;
-  }
-  header .header--loguin:hover .header--ventanaLoguin {
-    visibility: initial;
-  }
-  header .header--loguin .header--img {
-    width: 36px;
-    height: 36px;
-    border-radius: 50px;
-  }
-  header .header--loguin .header--ventanaLoguin {
-    visibility: hidden;
-    height: 40px;
-    width: 68px;
-    position: relative;
-    top: 3px;
-    right: 30px;
-  }
-  header .header--loguin .header--ventanaLoguin a {
-    color: #000000;
-    padding: 3px 0px;
-    float: right;
-    text-decoration: none;
-  }
-  header .header--loguin .header--ventanaLoguin a:hover {
-    text-decoration: underline;
+    display: inline;
+    padding-left: 40px;
+    color: #ffffff;
   }
 }
 /*# sourceMappingURL=header.css.map */
