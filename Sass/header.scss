@@ -1,7 +1,3 @@
-
-
-
-
 header {
   background-color: #6b0504;
   display: flex;
@@ -86,7 +82,7 @@ header {
         padding: 3px 0px;
         float: right;
         text-decoration: none;
-        &:hover  .nav--ul {
+        &:hover .nav--ul {
           text-decoration: underline;
         }
       }
@@ -94,111 +90,42 @@ header {
   }
 }
 
-
-
-
 @media (min-width: 769px) and (max-width: 1440px) {
-
   header {
-   // background-color: #6b0504;
-   // display: flex;
-   // width: 100%;
-  //  height: 50px;
-  //  justify-content: space-between;
-  
-    .header--logo {
-     // margin: 7px 0px 0px 6px;
-      a {
-        .header__a--img {
-         // width: 36px;
-        //  height: 36px;
-        }
-      }
-    }
-  
     .header--menu {
-     padding-top: 13px;
-    //  text-align: center;
-  
-    //  transition: 1s;
-      &:hover .header--nav {
-      //  right: 20%;
-      }
+      padding-top: 13px;
+
       span {
         display: none;
-
-    //    color: #ffffff;
       }
       .header--nav {
         width: 100%;
         position: initial;
         transition: 0s;
-      background-color: initial;
-      //  width: 80%;
-      right: 0%;
-       top: 0px;
-       // position: absolute;
+        background-color: initial;
+
+        right: 0%;
+        top: 0px;
+
         .nav--ul {
-        padding-left: 0px;
-       // display: inline;
-         margin: 0px;
-         text-align: center;
-         background-color: initial;
+          padding-left: 0px;
+
+          margin: 0px;
+          text-align: center;
+          background-color: initial;
           .nav__ul--li {
             display: inline;
-          padding: 0px;
-         //   list-style: none;
-            a {
-             display: inline;
-             padding-left: 40px;
+            padding: 0px;
 
-             color: #ffffff;
-         //    text-decoration: none;
-  
-              &:hover .nav__ul--li {
-               
-            //    background-color: #ffc9b7;
-              }
+            a {
+              display: inline;
+              padding-left: 40px;
+
+              color: #ffffff;
             }
-          }
-        }
-      }
-    }
-  
-    .header--loguin {
- //     margin: 5px 9px 0px 10px;
-  //    width: 36px;
-  //    height: 43px;
-  
-      &:hover .header--ventanaLoguin {
-    //    visibility: initial;
-      }
-  
-      .header--img {
-     //   width: 36px;
-     //   height: 36px;
-     //   border-radius: 50px;
-      }
-  
-      .header--ventanaLoguin {
-     //   visibility: hidden;
-     //   height: 40px;
-      //  width: 68px;
-     //   position: relative;
-      //  top: 3px;
-      //  right: 30px;
-  
-        a {
-      //    color: #000000;
-      //    padding: 3px 0px;
-      //    float: right;
-      //    text-decoration: none;
-          &:hover {
-       //     text-decoration: underline;
           }
         }
       }
     }
   }
 }
-

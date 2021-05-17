@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./src/assets/style/ingresar.css">
     <link rel="stylesheet" href="./src/assets/style/header.css">
     <link rel="stylesheet" href="./src/assets/style/style.css">
+
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Pagina de Inicio</title>
 </head>
 
+
+
 <body>
     <header>
         <div class="header--logo">
-            <a href="#" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
+            <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
         </div>
 
 
@@ -41,8 +46,9 @@
             <img class="header--img" src="./img/loguin.jpg" alt="" />
 
             <div class="header--ventanaLoguin">
-                <a href="">Registrar</a>
-                <a href="">Loguin</a>
+                <a href="./RegistrarEmpleado.php">Registrar</a>
+                <!-- <a href="" >Loguin</a> -->
+                <button type="button" onclick="loguin()">Loguin</button>
             </div>
 
         </div>
@@ -52,31 +58,31 @@
 
     <main>
 
-        <section>
+        <section class="main--section">
 
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="POST">
+            <form class="main__section--form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>"
+                method="POST">
 
-                <table>
-                    <tr class="form-group row">
+                <table class="form--table">
+                    <tr class="form__table--tr">
                         <td class="col-sm-2 col-form-label">Usuario: </td>
-                        <td class="col-sm-10"><input type="text" name="txtUsuario" value=""></td>
+                        <td class="col-sm-10"><input type="text" class="form-user" name="txtUsuario" value="" /></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form__table--tr">
                         <td class="col-sm-2 col-form-label">Password: </td>
-                        <td class="col-sm-10"><input type="text" name="txtPassword" value=""></td>
+                        <td class="col-sm-10"><input type="password" class="form-pass" name="txtPassword"
+                                autocomplete="on" /></td>
                     </tr>
-                </table>
+                    <tr class="form__table--btn">
 
-                <table class="form-group row">
-                    <tr> <input type="submit" name="btn" value="Ingresar"></tr>
-                    <tr><input type="submit" name="btn" value="Registrar"></tr>
+                        <td> <input type="submit" class="btn-ingresar" name="btn" value="Ingresar" /></td>
+                        <td> <input type="submit" class="btn-cancelar" name="btn" value="Cancelar" /></td>
+
                     </tr>
-                </table>
-            </form>
-        </section>
 
-        <section>
-            <?php
+                    <tr>
+                        <td>
+                            <?php
                  if (isset($_POST['btn'])) {
 
                     include_once "./Vista/VistaIngresar.php";
@@ -87,19 +93,20 @@
                     switch ($bot) {
                         case 'Ingresar':
                             
-/*                             if (ValidarUsuario($usu,$con)) {
+           /*                  if (ValidarUsuario($usu,$con)) {
                                 header("Location: ./Requerimiento.php");
                             } else {
                               echo "<label>clave o usuario incorrecto</label>";
-                            } */
+                            }  */
 
                             ValidarUsuario($usu,$con);
                             
                         break;
 
-                        case 'Registrar':
-                                header("Location: ./RegistrarEmpleado.php");
-                        break;
+                       case 'Cancelar':
+
+                        header("Location: ./index.php");
+                        break; 
                         
                         default:
                             # code...
@@ -107,17 +114,26 @@
                     }
                  }
             ?>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </section>
 
 
-
-
-
     </main>
+
     <footer>
 
     </footer>
+
     <script>
+
+        function loguin(e) {
+            document.querySelector(".main--section").style.visibility = "initial"
+        }
+
+/* 
 
         $(document).ready(main);
 
@@ -141,7 +157,7 @@
 
             });
 
-        };
+        }; */
     </script>
 </body>
 
