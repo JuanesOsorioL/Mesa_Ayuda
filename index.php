@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="./src/assets/style/ingresar.css">
+    <!--  <link rel="stylesheet" href="./src/assets/style/ingresar.css"> -->
     <link rel="stylesheet" href="./src/assets/style/header.css">
     <link rel="stylesheet" href="./src/assets/style/style.css">
 
@@ -47,7 +47,6 @@
 
             <div class="header--ventanaLoguin">
                 <a href="./RegistrarEmpleado.php">Registrar</a>
-                <!-- <a href="" >Loguin</a> -->
                 <button type="button" onclick="loguin()">Loguin</button>
             </div>
 
@@ -82,7 +81,7 @@
 
                     <tr>
                         <td>
-                            <?php
+            <?php
                  if (isset($_POST['btn'])) {
 
                     include_once "./Vista/VistaIngresar.php";
@@ -92,19 +91,10 @@
 
                     switch ($bot) {
                         case 'Ingresar':
-                            
-           /*                  if (ValidarUsuario($usu,$con)) {
-                                header("Location: ./Requerimiento.php");
-                            } else {
-                              echo "<label>clave o usuario incorrecto</label>";
-                            }  */
-
-                            ValidarUsuario($usu,$con);
-                            
+                            ValidarUsuario($usu,$con);   
                         break;
 
                        case 'Cancelar':
-
                         header("Location: ./index.php");
                         break; 
                         
@@ -133,31 +123,6 @@
             document.querySelector(".main--section").style.visibility = "initial"
         }
 
-/* 
-
-        $(document).ready(main);
-
-        var contador = 1;
-
-        function main() {
-            $('.menu_bar').click(function () {
-                //$('nav').toggle(); 
-
-                if (contador == 1) {
-                    $('nav').animate({
-                        left: '0'
-                    });
-                    contador = 0;
-                } else {
-                    contador = 1;
-                    $('nav').animate({
-                        left: '-100%'
-                    });
-                }
-
-            });
-
-        }; */
     </script>
 </body>
 

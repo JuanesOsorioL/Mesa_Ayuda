@@ -62,7 +62,7 @@
                 $comandoSql = "SELECT FKIDEMPLEADO,fkAREA,NOMBRE,FOTO,FKCARGO FROM usuario INNER JOIN empleado INNER JOIN cargo_por_empleado ON usuario.FKIDEMPLEADO=empleado.IDEMPLEADO && cargo_por_empleado.FKEMPLE = usuario.FKIDEMPLEADO where USUARIO = '".$usu."' && PASS = '".$con."' ";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 $registro = $rs->fetch_array(MYSQLI_BOTH);
-                if ($registro!=null) {
+                if ($registro!==null) {
                     $cedula=$registro["FKIDEMPLEADO"];
                     $area=$registro["fkAREA"];
                     $foto=$registro["FOTO"];
@@ -73,7 +73,7 @@
                 }
                 else {
                     return "null";
-                }
+                } 
                 $objControlConexion->cerrarBd();
             } catch(PDOException $e) {
                 echo "Error: " . $e->getMessage();
