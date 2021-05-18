@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!--  <link rel="stylesheet" href="./src/assets/style/ingresar.css"> -->
-    <link rel="stylesheet" href="./src/assets/style/header.css">
     <link rel="stylesheet" href="./src/assets/style/style.css">
 
     <meta name="viewport"
@@ -47,7 +45,8 @@
 
             <div class="header--ventanaLoguin">
                 <a href="./RegistrarEmpleado.php">Registrar</a>
-                <button type="button" onclick="loguin()">Loguin</button>
+                <a href="./loguin.php">Loguin</a>
+
             </div>
 
         </div>
@@ -55,75 +54,13 @@
 
 
 
-    <main>
 
-        <section class="main--section">
-
-            <form class="main__section--form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>"
-                method="POST">
-
-                <table class="form--table">
-                    <tr class="form__table--tr">
-                        <td class="col-sm-2 col-form-label">Usuario: </td>
-                        <td class="col-sm-10"><input type="text" class="form-user" name="txtUsuario" value="" /></td>
-                    </tr>
-                    <tr class="form__table--tr">
-                        <td class="col-sm-2 col-form-label">Password: </td>
-                        <td class="col-sm-10"><input type="password" class="form-pass" name="txtPassword"
-                                autocomplete="on" /></td>
-                    </tr>
-                    <tr class="form__table--btn">
-
-                        <td> <input type="submit" class="btn-ingresar" name="btn" value="Ingresar" /></td>
-                        <td> <input type="submit" class="btn-cancelar" name="btn" value="Cancelar" /></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-            <?php
-                 if (isset($_POST['btn'])) {
-
-                    include_once "./Vista/VistaIngresar.php";
-                    $bot=$_POST["btn"];
-                    $usu=$_POST["txtUsuario"];
-                    $con=$_POST["txtPassword"];
-
-                    switch ($bot) {
-                        case 'Ingresar':
-                            ValidarUsuario($usu,$con);   
-                        break;
-
-                       case 'Cancelar':
-                        header("Location: ./index.php");
-                        break; 
-                        
-                        default:
-                            # code...
-                            break;
-                    }
-                 }
-            ?>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </section>
-
-
-    </main>
 
     <footer>
 
     </footer>
 
-    <script>
 
-        function loguin(e) {
-            document.querySelector(".main--section").style.visibility = "initial"
-        }
-
-    </script>
 </body>
 
 </html>
