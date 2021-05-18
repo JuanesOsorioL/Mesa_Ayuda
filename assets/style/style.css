@@ -1,0 +1,515 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  background-color: #6b0504;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .header--logo {
+  margin: 7px 0px 0px 6px;
+}
+
+header .header--logo a .header__a--img {
+  width: 36px;
+  height: 36px;
+}
+
+header .header--menu {
+  padding-top: 17px;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header .header--menu:hover .header--nav {
+  left: 0%;
+}
+
+header .header--menu span {
+  color: #ffffff;
+}
+
+header .header--menu .header--nav {
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #343a40;
+  width: 80%;
+  left: -100%;
+  top: 50px;
+  position: absolute;
+}
+
+header .header--menu .header--nav .nav--ul {
+  padding-left: 10px;
+  margin: 0px 40px 0px 0px;
+  text-align: left;
+  background-color: #a3320b;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li {
+  padding: 10px 0px;
+  list-style: none;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+header .header--menu .header--nav .nav--ul .nav__ul--li a:hover .nav__ul--li {
+  background-color: #ffc9b7;
+}
+
+header .header--loguin {
+  margin: 5px 9px 0px 10px;
+  width: 36px;
+  height: 43px;
+}
+
+header .header--loguin:hover .header--ventanaLoguin {
+  visibility: initial;
+}
+
+header .header--loguin .header--img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50px;
+}
+
+header .header--loguin .header--ventanaLoguin {
+  visibility: hidden;
+  height: 40px;
+  width: 68px;
+  position: relative;
+  top: 3px;
+  right: 30px;
+}
+
+header .header--loguin .header--ventanaLoguin a {
+  color: #000000;
+  padding: 3px 0px;
+  float: right;
+  text-decoration: none;
+}
+
+header .header--loguin .header--ventanaLoguin a:hover .nav--ul {
+  text-decoration: underline;
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  header .header--menu {
+    padding-top: 13px;
+  }
+  header .header--menu span {
+    display: none;
+  }
+  header .header--menu .header--nav {
+    width: 100%;
+    position: initial;
+    -webkit-transition: 0s;
+    transition: 0s;
+    background-color: initial;
+    right: 0%;
+    top: 0px;
+  }
+  header .header--menu .header--nav .nav--ul {
+    padding-left: 0px;
+    margin: 0px;
+    text-align: center;
+    background-color: initial;
+  }
+  header .header--menu .header--nav .nav--ul .nav__ul--li {
+    display: inline;
+    padding: 0px;
+  }
+  header .header--menu .header--nav .nav--ul .nav__ul--li a {
+    display: inline;
+    padding-left: 40px;
+    color: #ffffff;
+  }
+}
+
+main {
+  height: 500px;
+}
+
+main .main--section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .main--section .main__section--form .form--table .form__table--tr .form-user {
+  display: block;
+  width: 90%;
+  padding: 4px 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+
+main .main--section .main__section--form .form--table .form__table--tr .form-pass {
+  display: block;
+  width: 90%;
+  padding: 4px 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+}
+
+main .main--section .main__section--form .form--table .form__table--btn {
+  text-align: center;
+}
+
+main .main--section .main__section--form .form--table .form__table--btn .btn-ingresar {
+  color: #fff;
+  background-color: #14c91c;
+  border-color: #14c91c;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .main--section .main__section--form .form--table .form__table--btn .btn-cancelar {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+/* 
+  main {
+    background-color: #000000;
+    .main--section {
+       
+     width: 100%;
+     height: 100%;
+      color: #ffffff;
+
+  
+      .main__section--form {
+        height: 398px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+   
+        .form--table {
+          background: #444444;
+          border-radius: 3px;
+        
+  
+          padding: 18px 23px;
+  
+          border-radius: 20px;
+          border: 2px solid #000000;
+  
+  .form__table--tr{
+  
+    .form-user{
+      display: block;
+      width: 90%;
+      padding: 4px 0px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+      transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  }
+  
+  .form-pass{
+    display: block;
+      width: 90%;
+      padding: 4px 0px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+      transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  }
+  
+  }
+  
+  
+  
+  
+          .form__table--btn {
+            text-align: center;
+  
+            .btn-ingresar {
+              color: #fff;
+              background-color: #14c91c;
+              border-color: #14c91c;
+  
+              display: inline-block;
+              font-weight: 400;
+              text-align: center;
+              white-space: nowrap;
+              vertical-align: middle;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              border: 1px solid transparent;
+              padding: 0.375rem 0.75rem;
+              font-size: 1rem;
+              line-height: 1.5;
+              border-radius: 0.25rem;
+              transition: color 0.15s ease-in-out,
+                background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+                box-shadow 0.15s ease-in-out;
+            }
+  
+            .btn-cancelar {
+              color: #fff;
+              background-color: #dc3545;
+              border-color: #dc3545;
+  
+              display: inline-block;
+              font-weight: 400;
+              text-align: center;
+              white-space: nowrap;
+              vertical-align: middle;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              border: 1px solid transparent;
+              padding: 0.375rem 0.75rem;
+              font-size: 1rem;
+              line-height: 1.5;
+              border-radius: 0.25rem;
+              transition: color 0.15s ease-in-out,
+                background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+                box-shadow 0.15s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  } */
+main .registrar_empleado .section--form {
+  padding-top: 30px;
+}
+
+main .registrar_empleado .section--form .form--table {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: grey;
+  margin: auto;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila_titulo,
+main .registrar_empleado .section--form .form--table .form--fila_boton {
+  text-align: center;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila td:nth-child(1) {
+  float: right;
+  padding-top: 2px;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila td:nth-child(2) {
+  width: 200px;
+  height: 15px;
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 7px;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila .form--texto {
+  display: block;
+  width: 96%;
+  padding: 0px 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila .form--input-foto,
+main .registrar_empleado .section--form .form--table .form--fila .form--input-cv {
+  width: 20%;
+  visibility: hidden;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila .btn-Agregar {
+  color: #fff;
+  background-color: #fb8b89;
+  border-color: #fb8b89;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #000000;
+  padding: 0px 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila_boton td {
+  padding: 15px 0px;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila_boton .btn-Guardar {
+  color: #fff;
+  background-color: #14c91c;
+  border-color: #14c91c;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #000000;
+  padding: 1px 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .registrar_empleado .section--form .form--table .form--fila_boton .btn-Regresar {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #000000;
+  padding: 1px 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .mensaje {
+  text-align: center;
+  color: #dc3545;
+}
+
+/*  */
+main .main--submenu .section--subnav .subnav--ul {
+  color: #ffffff;
+  width: 100%;
+  height: 40px;
+  background-color: brown;
+  padding-top: 20px;
+  text-align: center;
+}
+
+main .main--submenu .section--subnav .subnav--ul li {
+  margin: 0px 10px;
+  display: inline;
+}
+/*# sourceMappingURL=style.css.map */

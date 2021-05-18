@@ -40,7 +40,11 @@
                     $_SESSION['Areas'] = $respuesta->fetch_all(MYSQLI_ASSOC);
                     //print_r($Array); 
                     
-                    $menu=' 
+   
+
+
+
+                   $menu=' 
                     <table>
                         <tr>
                             <td><input type="button" value="Consultas" onclick="Consulta();"></td>
@@ -50,7 +54,7 @@
                             <td><input type="button" value="Cerrar seccion" onclick="Cerrarseccion();"></td>
                             <td><img src="./'.$_SESSION['Session']['Foto'].'" alt="" width="100px" height="100px"></td>
                         </tr>
-                    </table>';
+                    </table>'; 
                 } else {
                     $menu='
                         <table>

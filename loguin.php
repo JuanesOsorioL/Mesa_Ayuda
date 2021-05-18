@@ -4,17 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/assets/style/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>Loguin</title>
 </head>
 <body>
-    <script>
 
-        function loguin(e) {
-            document.querySelector(".main--section").style.visibility = "initial"
-        }
-
-    </script>
  <header>
     <div class="header--logo">
         <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
@@ -69,15 +63,15 @@
                                 autocomplete="on" /></td>
                     </tr>
                     <tr class="form__table--btn">
-
-                        <td> <input type="submit" class="btn-ingresar" name="btn" value="Ingresar" /></td>
-                        <td> <input type="submit" class="btn-cancelar" name="btn" value="Cancelar" /></td>
+                    <td></td>
+                        <td colspan="2"> <input type="submit" class="btn-ingresar" name="btn" value="Ingresar" />
+                        <input type="submit" class="btn-cancelar" name="btn" value="Cancelar" /></td>
 
                     </tr>
-
-                    <tr>
-                        <td>
-            <?php
+                </table>
+                <div>
+                <?php
+                
                  if (isset($_POST['btn'])) {
 
                     include_once "./Vista/VistaIngresar.php";
@@ -100,9 +94,8 @@
                     }
                  }
             ?>
-                        </td>
-                    </tr>
-                </table>
+
+                </div>
             </form>
         </section>
 

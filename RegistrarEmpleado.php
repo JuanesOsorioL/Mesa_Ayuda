@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./src/assets/style/style.css">
-    <link rel="stylesheet" href="./src/assets/style/header.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
+<script src="./assets/script/utilidades.js"></script>
     <title>RegistrarEmpleado</title>
 </head>
 
@@ -99,80 +98,85 @@ if (isset($_POST['btn'])) {
     </header>
 
     <main>
-        <section>
-            <form method="POST" enctype='multipart/form-data'
+        <section class="registrar_empleado">
+            <form class="section--form" method="POST" enctype='multipart/form-data'
                 action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
 
-                <table>
-                    <tr class="form-group row">
-                        <td>Registro de Empleados</td>
+                <table class="form--table">
+                    <tr class="form--fila_titulo">
+                        <td colspan="2">Registro de Empleados</td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Cedula: </td>
-                        <td><input type="text" id="IDEmple" name="txtIDEmpleado" value="<?php echo $Cedula;?>"></td>
+                        <td><input type="text" class="form--texto" id="IDEmple" name="txtIDEmpleado" value="<?php echo $Cedula;?>"></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Nombre: </td>
-                        <td><input type="text" name="txtNombre" value="<?php echo $Nombre;?>"></td>
+                        <td><input type="text" class="form--texto" name="txtNombre" value="<?php echo $Nombre;?>"></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Foto: </td>
-                        <td><input name='Imagen' type='file'></td>
+
+                    <td>
+                        <input type="button" class="btn-Agregar" name="btn" value="Subir Foto" onclick="subirFoto(event)" />
+                        <input name='Imagen' class="form--input-foto" type='file'>
+                    </td>
                     </tr>
-                    <tr class="form-group row">
-                        <td class="col-sm-2 col-form-label">HojaVida: </td>
-                        <td><input name='HojaVida' type='file'></td>
+                    <!-- <label class="form--label">Subir Foto</label> -->
+                    <tr class="form--fila">
+                        <td class="col-sm-2 col-form-label">CV: </td>
+                        <td>
+                            <input type="button" class="btn-Agregar" name="btn" value="Subir CV" onclick="subirCV(event)" />
+                            <input name='HojaVida' class="form--input-cv" type='file'></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Telefono: </td>
-                        <td><input type="text" name="txtTelefono" value="<?php echo $Telefono;?>"></td>
+                        <td><input type="text" class="form--texto" name="txtTelefono" value="<?php echo $Telefono;?>"></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Email: </td>
-                        <td><input type="text" name="txtEmail" value="<?php echo $Email;?>"></td>
+                        <td><input type="text" class="form--texto" name="txtEmail" value="<?php echo $Email;?>"></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Direccion: </td>
-                        <td><input type="text" name="txtDireccion" value="<?php echo $Direccion;?>"></td>
+                        <td><input type="text" class="form--texto" name="txtDireccion" value="<?php echo $Direccion;?>"></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">X: </td>
-                        <td><input type="text" name="txtX" value="<?php echo $X;?>"></td>
+                        <td><input type="text" class="form--texto" name="txtX" value="<?php echo $X;?>"></td>
                     </tr>
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Y: </td>
-                        <td><input type="text" name="txtY" value="<?php echo $Y;?>"></td>
+                        <td><input type="text" class="form--texto" name="txtY" value="<?php echo $Y;?>"></td>
                     </tr>
 
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Area: </td>
                         <td>
-                            <select id="Area" name="Area" class="mirar">
+                            <select id="Area" name="Area"  class="form--texto" >
                                 <option value="0">Seleccione</option>
                                 <?php CargarListarArea(); ?>
                             </select>
                         </td>
                     </tr>
 
-                    <tr class="form-group row">
+                    <tr class="form--fila">
                         <td class="col-sm-2 col-form-label">Usuario: </td>
-                        <td><input type="text" name="txtUsuario" value="<?php echo $Usuario;?>"></td>
+                        <td><input type="text" class="form--texto" name="txtUsuario" value="<?php echo $Usuario;?>"></td>
                     </tr>
-                    <tr class="form-group row">
-                        <td class="col-sm-2 col-form-label">Contraseña: </td>
-                        <td><input type="text" name="txtContraseña" value="<?php echo $Pass;?>"></td>
+                    <tr class="form--fila">
+                        <td class="col-sm-2 col-form-label">Clave: </td>
+                        <td><input type="text" class="form--texto" name="txtContraseña" value="<?php echo $Pass;?>"></td>
                     </tr>
-                </table>
-                <table>
-                    <tr class="form-group row">
-                        <td><input type="submit" name="btn" value="Guardar" /></td>
-                        <td><input type="submit" name="btn" value="Regresar" /></td>
+                    <tr class="form--fila_boton">
+                        <td colspan="2"><input type="submit" name="btn" value="Guardar" class="btn-Guardar" />
+                        <input type="submit" name="btn" value="Regresar" class="btn-Regresar"/></td>
                     </tr>
                 </table>
             </form>
         </section>
 
-        <section>
+        <section class="mensaje">
             <?php echo $msj;?>
         </section>
     </main>

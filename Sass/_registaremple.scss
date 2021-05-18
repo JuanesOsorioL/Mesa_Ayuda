@@ -1,0 +1,145 @@
+main {
+  //background-color: cornflowerblue;
+  .registrar_empleado {
+    .section--form {
+      padding-top: 30px;
+
+      .form--table {
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: grey;
+        margin: auto;
+
+        .form--fila_titulo,
+        .form--fila_boton {
+          text-align: center;
+        }
+
+        .form--fila {
+          td:nth-child(1) {
+            float: right;
+            padding-top: 2px;
+          }
+
+          td:nth-child(2) {
+            width: 200px;
+            height: 15px;
+            border-collapse: separate;
+            text-indent: initial;
+            border-spacing: 7px;
+          }
+
+          .form--texto {
+            display: block;
+            width: 96%;
+            padding: 0px 0px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            -webkit-transition: border-color 0.15s ease-in-out,
+              -webkit-box-shadow 0.15s ease-in-out;
+            transition: border-color 0.15s ease-in-out,
+              -webkit-box-shadow 0.15s ease-in-out;
+            transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+            transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+          }
+
+          .form--input-foto,
+          .form--input-cv {
+            width: 20%;
+            visibility: hidden;
+          }
+
+          .btn-Agregar {
+            color: #fff;
+            background-color: #fb8b89;
+            border-color: #fb8b89;
+
+            display: inline;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid #000000;
+            padding: 0px 22px;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out,
+              background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+          }
+        }
+
+        .form--fila_boton {
+          td {
+            padding: 15px 0px;
+          }
+          .btn-Guardar {
+            color: #fff;
+            background-color: #14c91c;
+            border-color: #14c91c;
+
+            display: inline;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid #000000;
+            padding: 1px 22px;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out,
+              background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+          }
+
+          .btn-Regresar {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+
+            display: inline;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid #000000;
+            padding: 1px 22px;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out,
+              background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+  .mensaje{
+      text-align: center;
+      color: #dc3545;
+  }
+}
+
+/*  */
