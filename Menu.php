@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
-        <script>
+  <!--       <script>
              function consultarEmpleado(){
             window.location.href="./ConsultarEmpleado.php";
             }
@@ -29,7 +29,7 @@
             function MisRequerimientos(){
             window.location.href="./MisRequerimientos.php";
             }
-        </script>
+        </script> -->
     <body>
     <header>
         <div class="header--logo">
@@ -55,32 +55,15 @@
             <img class="header--img" src="./img/loguin.jpg" alt="" />
 
             <div class="header--ventanaLoguin">
-                <a href="./loguin.php">Cerrar Seccion</a>
+                <a href="./index.php">Cerrar Seccion</a>
                
 
             </div>
 
         </div>
     </header>
-
         <main>
-
-
-
             <section class="main--submenu">
-
-<nav class="section--subnav">
-    <ul class="subnav--ul">
-        <li><a>Consultas</a></li>
-        <li><a>Informes</a></li>
-        <li><a>Mis Requerimientos</a></li>
-        <li><a>Requerimiento</a></li>
-
-    </ul>
-</nav>
-
-
-
             <?php 
             include "./Vista/VistaMenu.php";
             echo $menu; ?>
