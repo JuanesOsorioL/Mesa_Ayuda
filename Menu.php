@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="./assets/style/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/script/utilidades.js"> </script>
+    <title>Document</title>
+</head>
+<?php   include "./Vista/VistaMenu.php"; ?>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-  <!--       <script>
-             function consultarEmpleado(){
-            window.location.href="./ConsultarEmpleado.php";
-            }
-            function Cerrarseccion(){
-            window.location.href="./index.php";
-            }
-            function Requerimiento(){
-            window.location.href="./Requerimiento.php";
-            }
-
-            function GestionArea(){
-            window.location.href="./GestionArea.php";
-            }
-            function Consulta(){
-            window.location.href="./Consultas.php";
-            }
-            function MisRequerimientos(){
-            window.location.href="./MisRequerimientos.php";
-            }
-        </script> -->
-    <body>
+<body>
     <header>
         <div class="header--logo">
             <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
@@ -52,26 +35,39 @@
         </div>
 
         <div class="header--loguin">
-            <img class="header--img" src="./img/loguin.jpg" alt="" />
+            <img class="header--img" src="<?php echo $_SESSION['Session']['Foto'];?>" alt="" />
 
             <div class="header--ventanaLoguin">
-                <a href="./index.php">Cerrar Seccion</a>
-               
+                <a href="./index.php">Logout</a>
+
 
             </div>
 
         </div>
     </header>
-        <main>
-            <section class="main--submenu">
-            <?php 
-            include "./Vista/VistaMenu.php";
-            echo $menu; ?>
-            </section>
-        </main>
+    <main>
+        <section class="main--submenu">
+            <div class="contenedor">
+                <div class="contenedor-icono">
+                    <i class="fas fa-ellipsis-v" onclick="submenu()"></i>
+                </div>
+                <div class="contenedor-submenu">
+                    <span class="nombre_usuario">
+                        <?php echo $_SESSION['Session']['Nombre'];?>
+                    </span>
+                    <?php echo $menu; ?>
 
-        <footer>
-        </footer>
+                </div>
+                <div class="contenedor-margin"></div>
 
-    </body>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+</body>
+
 </html>

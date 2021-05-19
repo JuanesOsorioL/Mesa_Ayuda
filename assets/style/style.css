@@ -499,54 +499,146 @@ main .mensaje {
 }
 
 /*  */
-main .main--submenu {
-  color: #ffffff;
+.ampliar {
+  height: 235px;
 }
 
-main .main--submenu .section--subnav .subnav--ul {
-  color: #ffffff;
-  width: 100%;
-  height: 40px;
+main .main--submenu .contenedor {
   background-color: brown;
-  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .main--submenu .contenedor .contenedor-icono {
+  width: calc(8.3% * 1);
   text-align: center;
+  padding-top: 14px;
+  cursor: pointer;
 }
 
-main .main--submenu .section--subnav .subnav--ul li {
-  margin: 0px 10px;
-  display: inline;
+main .main--submenu .contenedor .contenedor-icono .fas {
+  color: #ffffff;
 }
 
-main .main--submenu .section--subnav .subnav--ul li a {
-  text-decoration: none;
+main .main--submenu .contenedor .contenedor-icono .fas:hover {
+  color: #000000;
+}
+
+main .main--submenu .contenedor .contenedor-submenu {
+  text-align: center;
+  margin-top: 10px;
+  width: calc(8.3% * 10);
+}
+
+main .main--submenu .contenedor .contenedor-submenu .nombre_usuario {
+  color: #ffffff;
+}
+
+main .main--submenu .contenedor .contenedor-submenu .section--subnav {
+  width: 100%;
+  margin-top: 13px;
+}
+
+main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul {
+  visibility: hidden;
   list-style: none;
+  height: 0px;
+  text-align: center;
+  display: block;
+  -webkit-margin-before: 0px;
+          margin-block-start: 0px;
+  -webkit-margin-after: 0px;
+          margin-block-end: 0px;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
 }
 
-/* 
+main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul .ul--li {
+  margin: auto;
+  padding: 10px;
+  width: 70%;
+  border-radius: 50px;
+}
+
+main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul .ul--li:hover {
+  background-color: #e26969;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul .ul--li .ul__li--a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+main .main--submenu .contenedor .contenedor-margin {
+  width: calc(8.3% * 1);
+}
+
 @media (min-width: 769px) and (max-width: 1440px) {
-
-    main {
-        .main--submenu {
-          .section--subnav {
-            .subnav--ul {
-              color: #ffffff;
-              width: 100%;
-              height: 40px;
-              background-color: brown;
-              padding-top: 20px;
-              text-align: center;
-      
-              li {
-                margin: 0px 10px;
-                display: inline;
-                a {
-                }
-              }
-            }
-          }
-        }
-      }
-
-
-} */
+  main .main--submenu .contenedor {
+    background-color: brown;
+  }
+  main .main--submenu .contenedor .contenedor-icono {
+    display: none;
+  }
+  main .main--submenu .contenedor .contenedor-submenu {
+    -webkit-transition: 1s;
+    transition: 1s;
+    width: 100%;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main .main--submenu .contenedor .contenedor-submenu .nombre_usuario {
+    width: calc(8.3% * 3);
+    color: #ffffff;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  main .main--submenu .contenedor .contenedor-submenu .section--subnav {
+    width: calc(8.3% * 9);
+    margin-top: 0px;
+  }
+  main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul {
+    visibility: initial;
+    list-style: none;
+    text-align: center;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul .ul--li {
+    visibility: initial;
+    -webkit-transition: 1s;
+    transition: 1s;
+    display: inline;
+    margin: 0% 1%;
+    padding: 1px;
+  }
+  main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul .ul--li .ul__li--a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  main .main--submenu .contenedor .contenedor-margin {
+    display: none;
+  }
+}
 /*# sourceMappingURL=Style.css.map */

@@ -9,32 +9,15 @@
             case '1':
                 $menu='
                 <nav class="section--subnav">
-                <ul class="subnav--ul">
-                    <li><a href="">Administrar usuarios</a></li>
-                    <li><a href="./GestionArea.php">Gestión de áreas</a></li>
-                    <li><a href="./ConsultarEmpleado.php">Empleados</a></li>
-                    <li><a href="">Cargos</a></li>
-                    <li><a href="./Consultas.php">Consultas</a></li>
-                    <li><a href="">Informes</a></li>
+                <ul class="subnav--ul" id="submenu">
+                    <li class="ul--li" ><a class="ul__li--a" href="">Gestionar Usuarios</a></li>
+                    <li class="ul--li" ><a class="ul__li--a" href="./GestionArea.php">Gestión de Áreas</a></li>
+                    <li class="ul--li" ><a class="ul__li--a" href="./ConsultarEmpleado.php">Empleados</a></li>
+                    <li class="ul--li" ><a class="ul__li--a" href="">Cargos</a></li>
+                    <li class="ul--li" ><a class="ul__li--a" href="./Consultas.php">Consultas</a></li>
+                    <li class="ul--li" ><a class="ul__li--a" href="">Informes</a></li>
                 </ul>
-            </nav> 
-                
-                ';
-
-           /*  $menu=' 
-                <table>
-                    <tr>
-                        <td><input type="button" value="Administrar usuarios"></td>
-                        <td><input type="button" value="Gestión de áreas" onclick="GestionArea();"></td>
-                        <td><input type="button" value="Empleados" onclick="consultarEmpleado();"></td> 
-                        <td><input type="button" value="Cargos"></td>
-                        <td><input type="button" value="Consultas" onclick="Consulta();"></td>
-                        <td><input type="button" value="Informes"></td>
-                        <td><input type="button" value="Cerrar seccion" onclick="Cerrarseccion();"></td>
-                        <td><img src="./'.$_SESSION['Session']['Foto'].'" alt="" width="100px" height="100px"></td>
-                    </tr>
-                </table>'; */
-            
+            </nav>';
             break;
         
             default:
@@ -55,50 +38,27 @@
                     //print_r($Array); 
                     
                     $menu='<nav class="section--subnav">
-                    <ul class="subnav--ul">
-                        <li><a href="./Consultas.php">Consultas</a></li>
-                        <li><a href="">Informes</a></li>
-                        <li><a href="./MisRequerimientos.php">Mis Requerimientos</a></li>
-                        <li><a href="./Requerimiento.php">Requerimiento</a></li>
+                    <ul class="subnav--ul" id="submenu">
+                        <li class="ul--li" ><a class="ul__li--a" href="./Consultas.php">Consultas</a></li>
+                        <li class="ul--li" ><a class="ul__li--a" href="">Informes</a></li>
+                        <li class="ul--li" ><a class="ul__li--a" href="./MisRequerimientos.php">Mis Requerimientos</a></li>
+                        <li class="ul--li" ><a class="ul__li--a" href="./Requerimiento.php">Requerimiento</a></li>
                 
                     </ul>
                 </nav>';
 
-
-
-/*                    $menu=' 
-                    <table>
-                        <tr>
-                            <td><input type="button" value="Consultas" onclick="Consulta();"></td>
-                            <td><input type="button" value="Informes"></td>
-                            <td><input type="button" value="Mis Requerimientos" onclick="MisRequerimientos();"></td>
-                            <td><input type="button" value="Requerimiento" onclick="Requerimiento();"></td>
-                            <td><input type="button" value="Cerrar seccion" onclick="Cerrarseccion();"></td>
-                            <td><img src="./'.$_SESSION['Session']['Foto'].'" alt="" width="100px" height="100px"></td>
-                        </tr>
-                    </table>';  */
                 } else {
 
                     $menu='
                     <nav class="section--subnav">
-    <ul class="subnav--ul">
-        <li><a href="./MisRequerimientos.php">Mis Requerimientos</a></li>
-        <li><a href="./Requerimiento.php">Requerimiento</a></li>
+                        <ul class="subnav--ul" id="submenu">
+                            <li class="ul--li" ><a class="ul__li--a" href="./MisRequerimientos.php">Mis Requerimientos</a></li>
+                            <li class="ul--li" ><a class="ul__li--a" href="./Requerimiento.php">Requerimiento</a></li>
 
-    </ul>
-</nav>
+                        </ul>
+                    </nav>
                     ';
 
-
-                   /*  $menu='
-                        <table>
-                            <tr>
-                                <td><input type="button" value="Requerimiento" onclick="Requerimiento();"></td>
-                                <td><input type="button" value="Mis Requerimientos" onclick="MisRequerimientos();"></td>
-                                <td><input type="button" value="Cerrar seccion" onclick="Cerrarseccion();"></td>
-                                <td><img src="./'.$_SESSION['Session']['Foto'].'" alt="" width="100px" height="100px"></td>
-                            </tr>
-                        </table>'; */
                 }
             break;
         }
