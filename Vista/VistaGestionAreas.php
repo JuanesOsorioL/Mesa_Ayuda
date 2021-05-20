@@ -13,8 +13,8 @@
     
 
    
-    session_start();
-    $menu="";
+   // session_start();
+   // $menu="";
     $plantilla="";
 
 if (isset($_POST['btn'])) {
@@ -109,19 +109,19 @@ function select($ID){
     }
     
         $plantilla='
-        <table>
+       
             <tr>
-                <td>Areas</td>
+                <td colspan="3" class=" tituloprincipal" >Areas</td>
             </tr>
     
             <tr>
-                <td>ID Area</td>
-                <td>Nombre Area</td>
-                <td>Director Area</td>
+                <td class=" titulosecundario">ID</td>
+                <td class=" titulosecundario">Nombre Area</td>
+                <td class=" titulosecundario">Director Area</td>
             </tr>
     
             '.$Resultado.'
-        </table>
+       
         ';
     
     

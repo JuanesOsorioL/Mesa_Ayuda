@@ -9,7 +9,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./assets/script/utilidades.js"> </script>
-    <title>Document</title>
+    <title>Menu</title>
 </head>
 <?php   include "./Vista/VistaMenu.php"; ?>
 
@@ -45,6 +45,10 @@
 
         </div>
     </header>
+
+
+
+    
     <main>
         <section class="main--submenu">
             <div class="contenedor">

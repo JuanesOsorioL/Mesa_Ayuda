@@ -498,7 +498,6 @@ main .mensaje {
   color: #dc3545;
 }
 
-/*  */
 .ampliar {
   height: 235px;
 }
@@ -640,5 +639,106 @@ main .main--submenu .contenedor .contenedor-margin {
   main .main--submenu .contenedor .contenedor-margin {
     display: none;
   }
+}
+
+/* 
+@media (min-width: 769px) and (max-width: 1440px) {
+ 
+
+}
+
+ */
+main .main--sectionArea {
+  font-size: 10px;
+}
+
+main .main--sectionArea .sectionArea--form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+main .main--sectionArea .sectionArea--form .form--table {
+  margin: auto;
+  background-color: #a80000;
+  border-radius: 10px;
+  padding: 3px;
+  border: 2px solid black;
+}
+
+main .main--sectionArea .sectionArea--form .form--table tr {
+  height: 30px;
+}
+
+main .main--sectionArea .sectionArea--form .form--table tr .tituloprincipal {
+  font-size: 20px;
+}
+
+main .main--sectionArea .sectionArea--form .form--table tr .titulosecundario {
+  font-size: 15px;
+}
+
+main .main--sectionArea .sectionArea--form .form--table tr td select {
+  display: block;
+  width: 100%;
+  padding: 0px 0px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .main--sectionArea .sectionArea--form .form--table tr td input:nth-of-type(1) {
+  color: #fff;
+  background-color: #fb8b89;
+  border-color: #fb8b89;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #000000;
+  padding: 1px 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .main--sectionArea .sectionArea--form .form--table tr td input:nth-of-type(2) {
+  color: #fff;
+  background-color: #14c91c;
+  border-color: #14c91c;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #000000;
+  padding: 1px 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 /*# sourceMappingURL=Style.css.map */
