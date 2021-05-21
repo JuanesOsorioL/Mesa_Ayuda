@@ -1,11 +1,16 @@
 
-/* 
-@media (min-width: 769px) and (max-width: 1440px) {
- 
+
+@media (min-width: 769px) {
+  main {
+    .main--sectionArea{
+      background-color: green;
+    }
+    
+  }
 
 }
 
- */
+ 
 
 
 
@@ -19,7 +24,7 @@ main {
 
       .form--table {
         margin: auto;
-        background-color: rgb(168, 0, 0);
+        background-color: gray;
         border-radius: 10px;
         padding: 3px;
         border: 2px solid black;

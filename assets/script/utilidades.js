@@ -23,3 +23,9 @@ if (window.location.pathname === "/Mesa_Ayuda/GestionArea.php") {
   document.getElementById("GestionArea").attributes[2].value = "./Menu.php";
   document.getElementById("GestionArea").style.color = "#000000";
 }
+
+if (window.location.pathname === "/Mesa_Ayuda/ConsultarEmpleado.php") {
+  document.getElementById("GestionEmpleado").textContent = "Menu";
+  document.getElementById("GestionEmpleado").attributes[2].value = "./Menu.php";
+  document.getElementById("GestionEmpleado").style.color = "#000000";
+}

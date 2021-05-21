@@ -2,12 +2,12 @@
     padding: 0px;
     margin: 0px;
   }
-
+@import "gestionarea"; 
 @import "header"; 
 @import "loguin"; 
 @import "registaremple"; 
 @import "nav"; 
-@import "gestionarea"; 
+@import "_administrarempleado";
 
 
 

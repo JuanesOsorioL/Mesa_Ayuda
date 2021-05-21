@@ -61,26 +61,25 @@ if (isset($_POST['btn'])) {
  */
 
 
-if (isset($_POST['btn'])) {
+if (isset($_POST['Accion'])) {
 
-
-  $bot=$_POST['btn'];
+  $bot=$_POST['Accion'];
   switch ($bot) {
 
     case 'Consultar':
 
-        include_once "./Modelo/Empleado.php";
-        include_once "./Control/ControlEmpleado.php";
-        include_once "./Control/ControlConexion.php";
-        include_once "./Control/ControlArea.php";
-        include_once "./Modelo/Area.php";
+        include_once "../Modelo/Empleado.php";
+        include_once "../Control/ControlEmpleado.php";
+        include_once "../Control/ControlConexion.php";
+        include_once "../Control/ControlArea.php";
+        include_once "../Modelo/Area.php";
           
         $Cedula=$_POST["txtIDEmpleado"];
         $objEmpleado=new Empleado($Cedula, "", "", "", "", "", "", "", "", "","","","","","");
         $objControlEmpleado=new ControlEmpleado($objEmpleado);
         $objEmpleado=$objControlEmpleado->consultar();
 
-     
+
      
         if ( $objEmpleado!==null) {
  
@@ -112,61 +111,61 @@ if (isset($_POST['btn'])) {
             
                 <table>
                 <tr>
-                    <td>Datos</td>
+                    <td  colspan="2" class="td--tituloprincipal" >Datos</td>
                 </tr>
                 <tr>
-                    <td>Cedula: </td>
-                    <td>'.$Cedula.'</td>
+                    <td class="td--titulosecundario" >Cedula: </td>
+                    <td  class="td--cedula"> <span>'.$Cedula.'</span></td>
                 </tr>
                 <tr>
-                    <td>Nombre: </td>
-                    <td><input type="text" name="txtNombre" value='.$Nombre.'></td>
+                    <td class="td--titulosecundario">Nombre: </td>
+                    <td><input class="input--texto" type="text" name="txtNombre" value='.$Nombre.'></td>
                 </tr>
                 <tr>
-                    <td>Foto: </td>
-                    <td><input type="text" name="txtFoto" value='.$Foto.'></td>
+                    <td class="td--titulosecundario">Foto: </td>
+                    <td><input class="input--texto" type="text" name="txtFoto" value='.$Foto.'></td>
                 </tr>
                 <tr>
-                    <td>HojaVida: </td>
-                    <td><input type="text" name="txtHojaVida" value='.$HojaVida.'></td>
+                    <td class="td--titulosecundario">HojaVida: </td>
+                    <td><input class="input--texto" type="text" name="txtHojaVida" value='.$HojaVida.'></td>
                 </tr>
                 <tr>
-                    <td>Telefono: </td>
-                    <td><input type="text" name="txtTelefono" value='.$Telefono.'></td>
+                    <td class="td--titulosecundario">Telefono: </td>
+                    <td><input class="input--texto" type="text" name="txtTelefono" value='.$Telefono.'></td>
                 </tr>
                 <tr>
-                    <td>Email: </td>
-                    <td><input type="text" name="txtEmail" value='.$Email.'></td>
+                    <td class="td--titulosecundario">Email: </td>
+                    <td><input class="input--texto" type="text" name="txtEmail" value='.$Email.'></td>
                 </tr>
                 <tr>
-                    <td>Direccion: </td>
-                    <td><input type="text" name="txtDireccion" value='.$Direccion.'></td>
+                    <td class="td--titulosecundario">Direccion: </td>
+                    <td><input class="input--texto" type="text" name="txtDireccion" value='.$Direccion.'></td>
                 </tr>
                 <tr>
-                    <td>X: </td>
-                    <td><input type="text" name="txtX" value='.$X.'></td>
+                    <td class="td--titulosecundario" >X: </td>
+                    <td><input class="input--texto" type="text" name="txtX" value='.$X.'></td>
                 </tr>
                 <tr>
-                    <td>Y: </td>
-                    <td><input type="text" name="txtY" value='.$Y.'></td>
+                    <td class="td--titulosecundario" >Y: </td>
+                    <td><input class="input--texto" type="text" name="txtY" value='.$Y.'></td>
                 </tr>
                 <tr>
-                    <td>Area: </td>
+                    <td class="td--titulosecundario" >Area: </td>
                 <td>
-                    <select id="Area" class="mirar">
+                    <select id="Area" class="mirar input--texto">
                     '.$opciones.'
                     </select>
                 </td>
                 </tr>
                 <tr>
-                    <td> <button type="button" id="Modificar" onclick="nombre()">Modificar</button> </td>
+                    <td  colspan="2"> <button class="input-btn" type="button" id="Modificar" onclick="nombre()">Modificar</button> </td>
                 </tr>
                 </table>';
 
             echo $contenido;
 
         } else {
-            print "no se encuentra nada";
+            print '<h1 class="mensaje-error"> No existe </h1>';
         } 
     break; 
 
