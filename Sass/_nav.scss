@@ -5,7 +5,9 @@
 main {
   .main--submenu {
     .contenedor {
-      background-color: brown;
+      height: 40px;
+
+      background-color: #880906;
 
       display: flex;
       flex-direction: row;
@@ -32,8 +34,15 @@ main {
           color: #ffffff;
         }
         .section--subnav {
+        /*   width: 100%;
+          margin-top: 13px; */
+
           width: 100%;
+          background-color: #880906;
+          top: 78px;
+          left: 0px;
           margin-top: 13px;
+          position: absolute;
 
           .subnav--ul {
             visibility: hidden;

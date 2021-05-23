@@ -3,6 +3,111 @@
   margin: 0px;
 }
 
+main {
+  height: 670px;
+  background-color: #130201;
+}
+
+main .main--consultaempleado {
+  margin-top: 20px;
+  font-size: 10px;
+}
+
+main .main--consultaempleado .consultaempleado--form table {
+  margin: auto;
+  background-color: grey;
+  border: 2px solid #ffffff;
+}
+
+main .main--consultaempleado .consultaempleado--form table tr {
+  height: 30px;
+  text-align: center;
+}
+
+main .main--consultaempleado .consultaempleado--form table tr .td--tituloprincipal {
+  font-size: 20px;
+}
+
+main .main--consultaempleado .consultaempleado--form table tr .td--titulosecundario {
+  font-size: 15px;
+}
+
+main .main--consultaempleado .consultaempleado--form table tr .input--texto {
+  display: block;
+  width: 90%;
+  padding: 0px 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .main--consultaempleado .consultaempleado--form table tr .input-btn {
+  margin: 5px 0px;
+  color: #ffffff;
+  background-color: #14c91c;
+  border-color: #14c91c;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .main--consultaempleado .consultaempleado--form #resultadoconsulta h1 {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  color: #ff0000;
+}
+
+main .main--consultaempleado .consultaempleado--form #resultadoconsulta table {
+  margin-top: 10px;
+}
+
+main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr {
+  text-align: center;
+}
+
+main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--cedula {
+  border-spacing: 0px;
+  font-size: 15px;
+}
+
+main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--titulosecundario {
+  float: left;
+}
+
+main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input--texto {
+  width: 80%;
+}
+
+main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input-btn {
+  background-color: #fb8b89;
+  border-color: #fb8b89;
+}
+
 @media (min-width: 769px) {
   main .main--sectionArea {
     background-color: green;
@@ -104,7 +209,7 @@ main .main--sectionArea .sectionArea--form .form--table tr td input:nth-of-type(
 }
 
 header {
-  background-color: #6b0504;
+  background-color: #620504;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,7 +247,7 @@ header .header--menu span {
 header .header--menu .header--nav {
   -webkit-transition: 1s;
   transition: 1s;
-  background-color: #343a40;
+  background-color: #000000;
   width: 80%;
   left: -100%;
   top: 50px;
@@ -153,7 +258,7 @@ header .header--menu .header--nav .nav--ul {
   padding-left: 10px;
   margin: 0px 40px 0px 0px;
   text-align: left;
-  background-color: #a3320b;
+  background-color: #620504;
 }
 
 header .header--menu .header--nav .nav--ul .nav__ul--li {
@@ -162,7 +267,7 @@ header .header--menu .header--nav .nav--ul .nav__ul--li {
 }
 
 header .header--menu .header--nav .nav--ul .nav__ul--li a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -196,7 +301,7 @@ header .header--loguin .header--ventanaLoguin {
 }
 
 header .header--loguin .header--ventanaLoguin a {
-  color: #000000;
+  color: #ffffff;
   padding: 3px 0px;
   float: right;
   text-decoration: none;
@@ -239,11 +344,9 @@ header .header--loguin .header--ventanaLoguin a:hover .nav--ul {
   }
 }
 
-main {
-  height: 500px;
-}
-
 main .main--section {
+  height: 330px;
+  color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -603,7 +706,8 @@ main .mensaje {
 }
 
 main .main--submenu .contenedor {
-  background-color: brown;
+  height: 40px;
+  background-color: #880906;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -641,8 +745,14 @@ main .main--submenu .contenedor .contenedor-submenu .nombre_usuario {
 }
 
 main .main--submenu .contenedor .contenedor-submenu .section--subnav {
+  /*   width: 100%;
+          margin-top: 13px; */
   width: 100%;
+  background-color: #880906;
+  top: 78px;
+  left: 0px;
   margin-top: 13px;
+  position: absolute;
 }
 
 main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul {
@@ -741,102 +851,55 @@ main .main--submenu .contenedor .contenedor-margin {
   }
 }
 
-main .main--consultaempleado {
-  margin-top: 20px;
-  font-size: 10px;
+footer .footer-contenedor {
+  background-color: #6b0504;
+  height: 150px;
+  width: 100%;
 }
 
-main .main--consultaempleado .consultaempleado--form table {
-  margin: auto;
-  border: 2px solid #000000;
+footer .footer-contenedor .redessociales {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-main .main--consultaempleado .consultaempleado--form table tr {
-  height: 30px;
+footer .footer-contenedor .redessociales .circulo {
+  margin-top: 30px;
+  width: calc(8.3% * 3);
+}
+
+footer .footer-contenedor .redessociales .circulo i {
+  text-align: center;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #000000;
+  font-size: 30px;
+  color: #ffffff;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+footer .footer-contenedor .redessociales .circulo i:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-color: #ffffff;
+  color: #0004ff;
+}
+
+footer .footer-contenedor .texto {
   text-align: center;
 }
 
-main .main--consultaempleado .consultaempleado--form table tr .td--tituloprincipal {
-  font-size: 20px;
-}
-
-main .main--consultaempleado .consultaempleado--form table tr .td--titulosecundario {
-  font-size: 15px;
-}
-
-main .main--consultaempleado .consultaempleado--form table tr .input--texto {
+footer .footer-contenedor .texto span {
+  color: #ffffff;
+  padding-top: 15px;
   display: block;
-  width: 90%;
-  padding: 0px 0px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
-
-main .main--consultaempleado .consultaempleado--form table tr .input-btn {
-  margin: 5px 0px;
-  color: #fff;
-  background-color: #14c91c;
-  border-color: #14c91c;
-  display: inline;
-  font-weight: 400;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
-
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta h1 {
-  font-size: 20px;
-  margin-top: 10px;
-  text-align: center;
-  color: #ff0000;
-}
-
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table {
-  margin-top: 10px;
-}
-
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr {
-  text-align: center;
-}
-
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--cedula {
-  border-spacing: 0px;
-  font-size: 15px;
-}
-
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--titulosecundario {
-  float: left;
-}
-
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input--texto {
-  width: 80%;
-}
-
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input-btn {
-  background-color: #fb8b89;
-  border-color: #fb8b89;
-}
-/*# sourceMappingURL=Style.css.map */
+/*# sourceMappingURL=style.css.map */

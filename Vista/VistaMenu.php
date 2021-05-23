@@ -10,7 +10,7 @@
                 $menu='
                 <nav class="section--subnav">
                 <ul class="subnav--ul" id="submenu">
-                    <li class="ul--li" ><a class="ul__li--a"  href="">Gestionar Usuarios</a></li>
+                    <li class="ul--li" ><a class="ul__li--a" id="GestionUsuario" href="./GestionUsuarios.php">Gestionar Usuarios</a></li>
                     <li class="ul--li" ><a class="ul__li--a" id="GestionArea" href="./GestionArea.php">Gestión de Áreas</a></li>
                     <li class="ul--li" ><a class="ul__li--a" id="GestionEmpleado" href="./ConsultarEmpleado.php">Empleados</a></li>
                     <li class="ul--li" ><a class="ul__li--a" href="">Cargos</a></li>

@@ -107,6 +107,28 @@ if (isset($_POST['Accion'])) {
                 }
             } 
 
+/* 
+ <tr>
+                    <td class="td--titulosecundario">Foto: </td>
+                    <td><input class="input--texto" type="text" name="txtFoto" value='.$Foto.'></td>
+                </tr>
+
+
+             <tr>
+                    <td class="td--titulosecundario">HojaVida: </td>
+                    <td><input class="input--texto" type="text" name="txtHojaVida" value='.$HojaVida.'></td>
+                </tr>
+
+<embed type="application/pdf" src="./'.$HojaVida.'"  width="100px" height="100px"></embed>
+
+*/
+
+
+
+
+
+
+
             $contenido='
             
                 <table>
@@ -117,18 +139,35 @@ if (isset($_POST['Accion'])) {
                     <td class="td--titulosecundario" >Cedula: </td>
                     <td  class="td--cedula"> <span>'.$Cedula.'</span></td>
                 </tr>
+
+
                 <tr>
                     <td class="td--titulosecundario">Nombre: </td>
                     <td><input class="input--texto" type="text" name="txtNombre" value='.$Nombre.'></td>
                 </tr>
                 <tr>
-                    <td class="td--titulosecundario">Foto: </td>
-                    <td><input class="input--texto" type="text" name="txtFoto" value='.$Foto.'></td>
+                    <td class="td--titulosecundario">Foto: <img class="header--img" src="./'.$Foto.'" alt="'.$Nombre.'" /></td>
+                    <td></td>
                 </tr>
+
+        
+
                 <tr>
-                    <td class="td--titulosecundario">HojaVida: </td>
-                    <td><input class="input--texto" type="text" name="txtHojaVida" value='.$HojaVida.'></td>
-                </tr>
+                    <td class="td--titulosecundario">HojaVida: 
+
+                    <iframe src="./'.$HojaVida.'" width="100px" height="100px">
+                    </iframe>
+
+
+
+                    
+                    </td>
+                    <td>
+                    
+                    </td>
+                    
+                    
+                   </tr>
                 <tr>
                     <td class="td--titulosecundario">Telefono: </td>
                     <td><input class="input--texto" type="text" name="txtTelefono" value='.$Telefono.'></td>

@@ -1,5 +1,5 @@
 header {
-  background-color: #6b0504;
+  background-color: #620504;
   display: flex;
   width: 100%;
   height: 50px;
@@ -28,7 +28,7 @@ header {
     }
     .header--nav {
       transition: 1s;
-      background-color: #343a40;
+      background-color: #000000;
       width: 80%;
       left: -100%;
       top: 50px;
@@ -37,12 +37,13 @@ header {
         padding-left: 10px;
         margin: 0px 40px 0px 0px;
         text-align: left;
-        background-color: #a3320b;
+        background-color: #620504;
         .nav__ul--li {
           padding: 10px 0px;
           list-style: none;
           a {
-            color: #000000;
+            color: #ffffff;
+           // color: #000000;
             text-decoration: none;
 
             &:hover .nav__ul--li {
@@ -78,7 +79,7 @@ header {
       right: 30px;
 
       a {
-        color: #000000;
+        color: #ffffff;
         padding: 3px 0px;
         float: right;
         text-decoration: none;

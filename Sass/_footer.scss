@@ -1,0 +1,47 @@
+footer {
+
+  
+  .footer-contenedor {
+    background-color: #6b0504;
+    height: 150px;
+    width: 100%;
+
+    .redessociales {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .circulo {
+        margin-top: 30px;
+        width: calc(8.3% * 3);
+
+        i {
+          text-align: center;
+          padding: 10px;
+          border-radius: 30px;
+        
+
+          background-color: #000000;
+          font-size: 30px;
+          color: #ffffff;
+          transition: 2s;
+
+          &:hover {
+            transition: 1s;
+            background-color: #ffffff;
+            color: #0004ff;
+          }
+        }
+      }
+    }
+
+    .texto{
+        text-align: center;
+        span{
+            color: #ffffff;
+            padding-top: 15px;
+            display: block;
+        }
+    }
+  }
+}

@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+
+
     <title>Requerimiento</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -57,8 +63,36 @@ include "./Vista/VistaConsulta.php";
     </main>
 
     <footer>
+        <div class="footer-contenedor">
+    
+            <div class="redessociales">
+    
+                <div class="circulo">
+                    <i class="fab fa-twitter-square"></i>
+                </div>
+                <div class="circulo">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="circulo">
+                    <i class="fab fa-telegram"></i>
+                </div>
+                <div class="circulo">
+                    <i class="fab fa-facebook-square"></i>
+                </div>
 
+            </div>
+
+            <div class="texto">
+                <span>Mesa De Ayuda - Colombia</span>
+                <span>© 2020 Copyright</span>
+            </div>
+
+        </div>
     </footer>
+
+
+
+
 <script>
 
     ////////////////

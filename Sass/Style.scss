@@ -2,12 +2,19 @@
     padding: 0px;
     margin: 0px;
   }
+
+main{
+  height: 670px;
+  background-color: #130201;
+}
+
+
+@import "_administrarempleado";
 @import "gestionarea"; 
 @import "header"; 
 @import "loguin"; 
 @import "registaremple"; 
 @import "nav"; 
-@import "_administrarempleado";
-
+@import "footer";
 
 

@@ -1,12 +1,14 @@
 main {
+ 
   .main--consultaempleado {
+    //color: #ffffff;
     margin-top: 20px;
     font-size: 10px;
     .consultaempleado--form {
       table {
         margin: auto;
-        // background-color: blue;
-        border: 2px solid #000000;
+        background-color: grey;
+        border: 2px solid #ffffff;
         tr {
           height: 30px;
           text-align: center;
@@ -40,7 +42,7 @@ main {
 
           .input-btn {
             margin: 5px 0px;
-            color: #fff;
+            color: #ffffff;
             background-color: #14c91c;
             border-color: #14c91c;
 
@@ -66,6 +68,7 @@ main {
       }
 
       #resultadoconsulta {
+
         h1{
           font-size: 20px;
           margin-top: 10px;

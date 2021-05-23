@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ -->
     <link rel="stylesheet" href="./assets/style/Style.css">
-
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    
-    
-    
-        <title>Pagina de Inicio</title>
+
+    <title>Gestionar Usuarios</title>
 </head>
-
-
-
+<?php   include "./Vista/VistaMenu.php"; ?>
 <body>
+    
     <header>
         <div class="header--logo">
             <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
         </div>
-
 
         <div class="header--menu">
             <span>Menu</span>
@@ -43,9 +38,6 @@
 
         </div>
 
-
-
-
         <div class="header--loguin">
             <img class="header--img" src="./img/loguin.jpg" alt="" />
 
@@ -58,41 +50,35 @@
         </div>
     </header>
 
-<main>
-
-</main>
-
-
-
-    <footer>
-        <div class="footer-contenedor">
-    
-            <div class="redessociales">
-    
-                <div class="circulo">
-                    <i class="fab fa-twitter-square"></i>
+    <main>
+        <section class="main--submenu">
+            <div class="contenedor">
+                <div class="contenedor-icono">
+                    <i class="fas fa-ellipsis-v" onclick="submenu()"></i>
                 </div>
-                <div class="circulo">
-                    <i class="fab fa-linkedin"></i>
+                <div class="contenedor-submenu">
+                    <span class="nombre_usuario">
+                        <?php echo $_SESSION['Session']['Nombre'];?>
+                    </span>
+                    <?php echo $menu; ?>
+
                 </div>
-                <div class="circulo">
-                    <i class="fab fa-telegram"></i>
-                </div>
-                <div class="circulo">
-                    <i class="fab fa-facebook-square"></i>
-                </div>
+                <div class="contenedor-margin"></div>
 
             </div>
 
-            <div class="texto">
-                <span>Mesa De Ayuda - Colombia</span>
-                <span>© 2020 Copyright</span>
-            </div>
+        </section>
 
-        </div>
-    </footer>
+<section>
+    holaaaa
+</section>
 
 
+    </main>
+
+
+
+    <script src="./assets/script/utilidades.js"> </script>
 </body>
 
 </html>
