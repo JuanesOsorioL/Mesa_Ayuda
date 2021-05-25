@@ -65,6 +65,8 @@ main {
               border-radius: 50px;
 
               &:hover {
+                width: 50%;
+               padding: 10px;
                 background-color: rgb(226, 105, 105);
                 transition: 1s;
               }
@@ -85,10 +87,17 @@ main {
 }
 
 @media (min-width: 769px) and (max-width: 1440px) {
+
+  .ampliar {
+    height: initial;
+  }
+
+
+
   main {
     .main--submenu {
       .contenedor {
-        background-color: brown;
+       // background-color: brown;
 
         .contenedor-icono {
           display: none;
@@ -109,6 +118,7 @@ main {
             transition: 1s;
           }
           .section--subnav {
+            position:initial;
             width: calc(8.3% * 9);
             margin-top: 0px;
 

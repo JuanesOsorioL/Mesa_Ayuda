@@ -8,6 +8,50 @@
         }
     
 
+        function AllUsers(){
+            try {	
+                $objControlConexion = new ControlConexion();
+                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                $comandoSql ='CALL MostrarTodosLosUsuarios()';
+                $rs = $objControlConexion->ejecutarSelect($comandoSql);
+                return $rs;
+                $objControlConexion->cerrarBd();
+            } catch(PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        }
+
+        function UpdateUser(){
+            try {
+                $user=$this->objUsuario->getUSUARIO();
+                $pass=$this->objUsuario->getPASS();
+                $id=$this->objUsuario->getFKIDEMPLEADO();
+                $objControlConexion = new ControlConexion();
+                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                $comandoSql ='CALL ModificarUsuario("'.$id.'","'.$user.'","'.$pass.'")';
+                $resultado=$objControlConexion->ejecutarComandoSql($comandoSql);
+                return $resultado;
+                $objControlConexion->cerrarBd();
+            } catch(PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        }
+
+        function DeleteUser(){
+            try {
+                $id=$this->objUsuario->getFKIDEMPLEADO();
+                $objControlConexion = new ControlConexion();
+                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                $comandoSql ='CALL EliminarUnUsuario("'.$id.'")';
+                $resultado=$objControlConexion->ejecutarComandoSql($comandoSql);
+                return $resultado;
+                $objControlConexion->cerrarBd();
+            } catch(PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
+        }
+
+///////////////////
 
         function ValidarUsuario(){//funciona
             try {
@@ -78,16 +122,10 @@
             } catch(PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
-        }
+        }       
 ///////
-
-
-
-
-
-
-
-
+/*"SELECT usuario FROM tableA INNER JOIN tableB ON tableA.nombre_columna=tableB.nombre_columna"*/
+//MostrarTodosLosUsuarios
 
 
         function consultar(){
@@ -115,32 +153,5 @@
             }
         }
     
-         function modificar(){
-            try {
-                $usu=$this->objUsuario->getUSUARIO();
-                $con=$this->objUsuario->getPASS();
-                $idemple=$this->objUsuario->getFKIDEMPLEADO();
-                $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
-                $comandoSql = "update usuario set USUARIO = '".$usu."', PASS = '".$con."' where FKIDEMPLEADO = '".$idemple."'";
-                $objControlConexion->ejecutarComandoSql($comandoSql);
-                $objControlConexion->cerrarBd();
-            } catch(PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }
-    
-        function borrar(){
-            try {
-                $idemple=$this->objUsuario->getFKIDEMPLEADO();
-                $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
-                $comandoSql = "delete from usuario where FKIDEMPLEADO = '".$idemple."'";
-                $objControlConexion->ejecutarComandoSql($comandoSql);
-                $objControlConexion->cerrarBd();
-            } catch(PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        } 
     }
 ?>

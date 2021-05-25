@@ -781,6 +781,8 @@ main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul
 }
 
 main .main--submenu .contenedor .contenedor-submenu .section--subnav .subnav--ul .ul--li:hover {
+  width: 50%;
+  padding: 10px;
   background-color: #e26969;
   -webkit-transition: 1s;
   transition: 1s;
@@ -796,8 +798,8 @@ main .main--submenu .contenedor .contenedor-margin {
 }
 
 @media (min-width: 769px) and (max-width: 1440px) {
-  main .main--submenu .contenedor {
-    background-color: brown;
+  .ampliar {
+    height: initial;
   }
   main .main--submenu .contenedor .contenedor-icono {
     display: none;
@@ -824,6 +826,7 @@ main .main--submenu .contenedor .contenedor-margin {
     transition: 1s;
   }
   main .main--submenu .contenedor .contenedor-submenu .section--subnav {
+    position: initial;
     width: calc(8.3% * 9);
     margin-top: 0px;
   }
@@ -901,5 +904,125 @@ footer .footer-contenedor .texto span {
   color: #ffffff;
   padding-top: 15px;
   display: block;
+}
+
+main .section--Usuarios {
+  font-size: 10px;
+  margin-top: 30px;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  main .section--Usuarios {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .section--Usuarios {
+    font-size: 20px;
+  }
+}
+
+main .section--Usuarios table {
+  border: 2px #000000 solid;
+  border-radius: 10px;
+  margin: auto;
+  width: 95%;
+  background-color: grey;
+  text-align: center;
+}
+
+main .section--Usuarios table tr:nth-of-type(1) {
+  font-size: 20px;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  main .section--Usuarios table tr:nth-of-type(1) {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .section--Usuarios table tr:nth-of-type(1) {
+    font-size: 30px;
+  }
+}
+
+main .section--Usuarios table tr:nth-of-type(2) {
+  font-size: 15px;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  main .section--Usuarios table tr:nth-of-type(2) {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .section--Usuarios table tr:nth-of-type(2) {
+    font-size: 25px;
+  }
+}
+
+main .section--Usuarios table tr td .contenedor-icon {
+  margin: 4px;
+  display: inline;
+}
+
+main .section--Usuarios table tr td .contenedor-icon i:nth-of-type(2) {
+  display: none;
+}
+
+main .section--Usuarios table tr td .contenedor-icon i {
+  color: #ffffff;
+}
+
+main .section--Usuarios table tr td .contenedor-icon i:hover {
+  color: #00ff55;
+}
+
+main .section--Usuarios table tr td .contenedor-icon:nth-of-type(2) {
+  margin: 4px;
+  display: inline;
+}
+
+main .section--Usuarios table tr td .contenedor-icon:nth-of-type(2) i {
+  color: #ffffff;
+}
+
+main .section--Usuarios table tr td .contenedor-icon:nth-of-type(2) i:hover {
+  color: #ff0000;
+}
+
+main .section--Usuarios table tr td input {
+  text-align: center;
+  display: block;
+  width: 95%;
+  padding: 0px 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .section--Usuarios table tr td input:enabled {
+  background-color: white;
+}
+
+main .section--Usuarios table tr td input:disabled {
+  background-color: black;
+}
+
+main .main__section-Mensaje h1 {
+  text-align: center;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */

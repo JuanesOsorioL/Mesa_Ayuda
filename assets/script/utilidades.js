@@ -29,7 +29,7 @@ if (window.location.pathname === "/Mesa_Ayuda/ConsultarEmpleado.php") {
   document.getElementById("GestionEmpleado").attributes[2].value = "./Menu.php";
   document.getElementById("GestionEmpleado").style.color = "#000000";
 }
-console.log(window.location.pathname);
+
 if (window.location.pathname === "/Mesa_Ayuda/GestionUsuarios.php") {
   document.getElementById("GestionUsuario").textContent = "Menu";
   document.getElementById("GestionUsuario").attributes[2].value = "./Menu.php";
