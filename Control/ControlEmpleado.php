@@ -11,7 +11,7 @@
                 $control=false;
                 $Cedula=$this->objEmpleado->getIDEmpleado();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "select NOMBRE from Empleado where IDEMPLEADO = '".$Cedula."' ";
                 $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
                 if ($respuesta->num_rows===1) {
@@ -38,7 +38,7 @@
                 $FKArea=$this->objEmpleado->getFKArea();
                 
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "insert into empleado (IDEMPLEADO, NOMBRE, FOTO, HOJAVIDA, TELEFONO, EMAIL, DIRECCION, X, Y, fkAREA)
                 values('".$Cedula."','".$Nombre."','".$Foto."','".$HojaVida."','".$Telefono."','".$Email."','".$Direccion."','".$X."','".$Y."','".$FKArea."')";
                 $respuesta=$objControlConexion->ejecutarComandoSql($comandoSql);
@@ -73,7 +73,7 @@
             try {
                 $Area=$this->objEmpleado->getFKArea();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "SELECT IDEMPLEADO ,NOMBRE FROM empleado INNER JOIN cargo_por_empleado ON empleado.IDEMPLEADO=cargo_por_empleado.FKEMPLE where FKCARGO  != 1 && fkAREA = '".$Area."' ";
                 $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
                /*  if ($respuesta->num_rows===1) {
@@ -92,7 +92,7 @@
         try {
            
             $objControlConexion = new ControlConexion();
-            $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+             $objControlConexion->abrirBd();
             $comandoSql = "SELECT IDEMPLEADO ,NOMBRE FROM empleado INNER JOIN cargo_por_empleado ON empleado.IDEMPLEADO=cargo_por_empleado.FKEMPLE where FKCARGO  != 1 ";
             $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
            /*  if ($respuesta->num_rows===1) {
@@ -110,7 +110,7 @@
                 try {
                     $IDEmpleado=$this->objEmpleado->getIDEmpleado();
                     $objControlConexion = new ControlConexion();
-                    $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                     $objControlConexion->abrirBd();
                     $comandoSql = "select NOMBRE from Empleado where IDEMPLEADO = '".$IDEmpleado."' ";
                     $rs = $objControlConexion->ejecutarSelect($comandoSql);
                     $registro = $rs->fetch_array(MYSQLI_BOTH);
@@ -132,7 +132,7 @@
                 try {
                     $IDEmpleado=$this->objEmpleado->getIDEmpleado();
                     $objControlConexion = new ControlConexion();
-                    $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                     $objControlConexion->abrirBd();
                     $comandoSql = "select * from Empleado where IDEMPLEADO = '".$IDEmpleado."' ";
                     $rs = $objControlConexion->ejecutarSelect($comandoSql);
                     
@@ -176,7 +176,7 @@
             try {
                 $IDEmpleado=$this->objEmpleado->getIDEmpleado();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "select NOMBRE from Empleado where IDEMPLEADO = '".$IDEmpleado."' ";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 $registro = $rs->fetch_array(MYSQLI_BOTH);
@@ -208,7 +208,7 @@
                 $Y=$this->objEmpleado->getY();
 
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "update Empleado set NOMBRE = '".$Nombre."', FOTO = '".$Foto."', HOJAVIDA = '".$HojaVida."', TELEFONO = ".$Telefono.", EMAIL = '".$Email."', DIRECCION = '".$Direccion."', X = ".$X.", Y = ".$Y." where IDEMPLEADO = '".$IDEmpleado."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -223,7 +223,7 @@
                 $IDEmpleado=$this->objEmpleado->getIDEmpleado();
                 $FKArea=$this->objEmpleado->getFKArea();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "update Empleado set fkAREA  = '".$FKArea."' where IDEMPLEADO = '".$IDEmpleado."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -237,7 +237,7 @@
                 $IDEmpleado=$this->objEmpleado->getIDEmpleado();
                 $FKEmple_Jefe=$this->objEmpleado->getFKEmple_Jefe();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "update Empleado set fkAREA  = '".$FKArea."' where IDEMPLEADO = '".$IDEmpleado."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -250,7 +250,7 @@
             try {
                 $IDEmpleado=$this->objEmpleado->getIDEmpleado();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "delete from Empleado where IDEMPLEADO = '".$IDEmpleado."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();

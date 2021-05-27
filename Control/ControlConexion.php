@@ -1,22 +1,28 @@
 <?php
-class ControlConexion
-{
-	
+class ControlConexion{
+
+	var $Servidor="localhost";
+	var	$Usuario="root";
+	var	$Pass="";
+	var	$baseDatos="mesa_ayuda";
 	var $conn;
+
 	function __construct(){
 		$this->conn=null;
 	}
-    function abrirBd($servidor, $usuario, $password, $db){
+   // function abrirBd($servidor, $usuario, $password, $db){
+
+		 function abrirBd(){
     	try	{
-			$this->conn = new mysqli($servidor, $usuario, $password, $db);
-			if ($this->conn->connect_errno) {
-			printf("Connect failed: %s\n", $this->conn->connect_error);
-			exit();
-			}
-      	}
-      	catch (Exception $e){
-          	echo "ERROR AL CONECTARSE AL SERVIDOR ".$e->getMessage()."\n";
-      	}
+			$this->conn = new mysqli($this->Servidor, $this->Usuario, $this->Pass, $this->baseDatos);
+				if ($this->conn->connect_errno) {
+					printf("Connect failed: %s\n", $this->conn->connect_error);
+					exit();
+				}
+      }
+      catch (Exception $e){
+        echo "ERROR AL CONECTARSE AL SERVIDOR ".$e->getMessage()."\n";
+      }
     }
 
 /////

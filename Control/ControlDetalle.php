@@ -12,7 +12,7 @@
             try {
                 $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                // $comandoSql = "select * from detallereq where FKEMPLEASIGNADO  = '".$FKEMPLEASIGNADO."'";
                $comandoSql ="SELECT * FROM detallereq INNER JOIN requerimiento ON detallereq.FKREQ =requerimiento.IDREQ where FKEMPLEASIGNADO  = '".$FKEMPLEASIGNADO."'";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
@@ -29,7 +29,7 @@
                 $IDREQ=$this->objDetalle->getFKREQ();
                 $FKESTADO=$this->objDetalle->getFKESTADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "select IDDETALLE,OBSERVACION,FKEMPLEASIGNADO,FKEMPLE from detallereq where FKREQ = '".$IDREQ."' && FKESTADO = '".$FKESTADO."'";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 return $rs;
@@ -44,7 +44,7 @@
                     $IDDETALLE=$this->objDetalle->getIDDETALLE();
                     $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                         $objControlConexion = new ControlConexion();
-                        $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                         $objControlConexion->abrirBd();
 
                         if ($FKEMPLEASIGNADO===NULL) {
                             $comandoSql = "update detallereq set FKEMPLEASIGNADO = NULL where IDDETALLE = '".$IDDETALLE."'";
@@ -73,7 +73,7 @@
                 $FKEMPLE=$this->objDetalle->getFKEMPLE();
                 $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "insert into detallereq (FECHA, OBSERVACION, FKREQ, FKESTADO, FKEMPLE,FKEMPLEASIGNADO) values('".$FECHA."','".$OBSERVACION."','".$FKREQ."','".$FKESTADO."','".$FKEMPLE."','".$FKEMPLEASIGNADO."')";
                 $res=$objControlConexion->ejecutarComandoSql($comandoSql);
                 return $res;
@@ -93,7 +93,7 @@
                 $FKEMPLE=$this->objDetalle->getFKEMPLE();
                 $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "insert into detallereq (FECHA, OBSERVACION, FKREQ, FKESTADO, FKEMPLE) values('".$FECHA."','".$OBSERVACION."','".$FKREQ."','".$FKESTADO."','".$FKEMPLE."')";
                 $res=$objControlConexion->ejecutarComandoSql($comandoSql);
                 return $res;
@@ -109,7 +109,7 @@ function ConsultarRequerimientos(){/////funciona
     try {
         $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
         $objControlConexion = new ControlConexion();
-        $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+         $objControlConexion->abrirBd();
        // $comandoSql = "select * from detallereq where FKEMPLEASIGNADO  = '".$FKEMPLEASIGNADO."'";
        $comandoSql ="SELECT * FROM detallereq INNER JOIN requerimiento ON detallereq.FKREQ =requerimiento.IDREQ";
         $rs = $objControlConexion->ejecutarSelect($comandoSql);
@@ -133,7 +133,7 @@ function ConsultarRequerimientos(){/////funciona
                 $IDDETALLE=$this->objDetalle->getIDDETALLE();
                 $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "select * from detallereq where IDDETALLE = '".$IDDETALLE."'";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 return $rs;
@@ -153,7 +153,7 @@ function ConsultarRequerimientos(){/////funciona
                $FKEMPLE=$this->objDetalle->getFKEMPLE();
                $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "update detallereq set FECHA = '".$FECHA."',OBSERVACION = '".$OBSERVACION."',FKREQ = '".$FKREQ."',FKESTADO = '".$FKESTADO."',FKEMPLE = '".$FKEMPLE."',FKEMPLEASIGNADO = '".$FKEMPLEASIGNADO."' where IDDETALLE = '".$IDDETALLE."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -167,7 +167,7 @@ function ConsultarRequerimientos(){/////funciona
                $IDDETALLE=$this->objDetalle->getIDDETALLE();
                $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "update detallereq set FKEMPLEASIGNADO = '".$FKEMPLEASIGNADO."' where IDDETALLE = '".$IDDETALLE."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -181,7 +181,7 @@ function ConsultarRequerimientos(){/////funciona
                $IDDETALLE=$this->objDetalle->getIDDETALLE();
                $FKEMPLEASIGNADO=$this->objDetalle->getFKEMPLEASIGNADO();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "delete from detallereq where IDDETALLE = '".$IDDETALLE."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();

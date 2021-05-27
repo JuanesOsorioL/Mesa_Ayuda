@@ -13,7 +13,7 @@
                 $TITULO=$this->objRequerimiento->getTITULO();
                 $FKAREA=$this->objRequerimiento->getFKAREA();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "insert into requerimiento (FKAREA, TITULO) values('".$FKAREA."','".$TITULO."')";
                 $id=$objControlConexion->ejecutarComandoSqlRecuperarID($comandoSql);
                 return $id;
@@ -36,7 +36,7 @@ function ColsultarTodosLosID(){///funciona
     try {
         $FKAREA=$this->objRequerimiento->getFKAREA();
         $objControlConexion = new ControlConexion();
-        $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+         $objControlConexion->abrirBd();
         //$comandoSql = "select * from Requerimiento where FKAREA  = '".$FKAREA."' ";
         $comandoSql = "SELECT IDREQ ,TITULO,FKEMPLE,FKAREA,FKESTADO,OBSERVACION,FKEMPLEASIGNADO FROM Requerimiento INNER JOIN detallereq ON Requerimiento.IDREQ=detallereq.FKREQ  where FKAREA  = '".$FKAREA."'";
         $rs = $objControlConexion->ejecutarSelect($comandoSql);
@@ -62,7 +62,7 @@ function ColsultarTodosLosID(){///funciona
             try {
                 $IDREQ=$this->objRequerimiento->getIDREQ();	
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "select FKAREA from Requerimiento where IDREQ  = '".$IDREQ."' ";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 $registro = $rs->fetch_array(MYSQLI_BOTH);
@@ -86,7 +86,7 @@ function ConsultarRequerimientosAsignados(){
     try {
        
         $objControlConexion = new ControlConexion();
-        $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+         $objControlConexion->abrirBd();
         $comandoSql = "select * from detallereq";
         $rs = $objControlConexion->ejecutarSelect($comandoSql);
         return $rs;
@@ -102,7 +102,7 @@ function ConsultarRequerimientosAsignados(){
             try {
                
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "select * from Requerimiento";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 return $rs;
@@ -117,7 +117,7 @@ function ConsultarRequerimientosAsignados(){
                 $IDREQ=$this->objRequerimiento->getIDREQ();	
                 $FKAREA=$this->objRequerimiento->getFKAREA();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "update Requerimiento set FKAREA = '".$FKAREA."' where IDREQ = '".$IDREQ."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -130,7 +130,7 @@ function ConsultarRequerimientosAsignados(){
             try {
                 $IDREQ=$this->objRequerimiento->getIDREQ();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "delete from Requerimiento where IDREQ = '".$IDREQ."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();

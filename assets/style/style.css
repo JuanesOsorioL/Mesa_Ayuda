@@ -108,27 +108,46 @@ main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr
   border-color: #fb8b89;
 }
 
-@media (min-width: 769px) {
-  main .main--sectionArea {
-    background-color: green;
-  }
-}
-
 main .main--sectionArea {
   font-size: 10px;
 }
 
+@media (min-width: 425px) and (max-width: 768px) {
+  main .main--sectionArea {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .main--sectionArea {
+    font-size: 18px;
+  }
+}
+
 main .main--sectionArea .sectionArea--form {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
 }
 
 main .main--sectionArea .sectionArea--form .form--table {
+  width: 90%;
   margin: auto;
   background-color: gray;
   border-radius: 10px;
   padding: 3px;
   border: 2px solid black;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  main .main--sectionArea .sectionArea--form .form--table {
+    width: 70%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .main--sectionArea .sectionArea--form .form--table {
+    width: 60%;
+  }
 }
 
 main .main--sectionArea .sectionArea--form .form--table tr {
@@ -139,8 +158,36 @@ main .main--sectionArea .sectionArea--form .form--table tr .tituloprincipal {
   font-size: 20px;
 }
 
+@media (min-width: 425px) and (max-width: 768px) {
+  main .main--sectionArea .sectionArea--form .form--table tr .tituloprincipal {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .main--sectionArea .sectionArea--form .form--table tr .tituloprincipal {
+    font-size: 30px;
+  }
+}
+
 main .main--sectionArea .sectionArea--form .form--table tr .titulosecundario {
   font-size: 15px;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  main .main--sectionArea .sectionArea--form .form--table tr .titulosecundario {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .main--sectionArea .sectionArea--form .form--table tr .titulosecundario {
+    font-size: 25px;
+  }
+}
+
+main .main--sectionArea .sectionArea--form .form--table tr :nth-of-type(3) {
+  width: 35%;
 }
 
 main .main--sectionArea .sectionArea--form .form--table tr td select {
@@ -930,6 +977,18 @@ main .section--Usuarios table {
   width: 95%;
   background-color: grey;
   text-align: center;
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+  main .section--Usuarios table {
+    width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main .section--Usuarios table {
+    width: 80%;
+  }
 }
 
 main .section--Usuarios table tr:nth-of-type(1) {

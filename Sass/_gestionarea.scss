@@ -1,28 +1,29 @@
-
-
-@media (min-width: 769px) {
-  main {
-    .main--sectionArea{
-      background-color: green;
-    }
-    
-  }
-
-}
-
- 
-
-
-
 main {
   .main--sectionArea {
     font-size: 10px;
 
+    @media (min-width: 425px) and (max-width: 768px) {
+      font-size: 13px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      font-size: 18px;
+    }
+
     .sectionArea--form {
-      margin-top: 20px;
+      margin-top: 30px;
       text-align: center;
 
       .form--table {
+        width: 90%;
+        @media (min-width: 425px) and (max-width: 768px) {
+          width: 70%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          width: 60%;
+        }
+
         margin: auto;
         background-color: gray;
         border-radius: 10px;
@@ -33,9 +34,29 @@ main {
           height: 30px;
           .tituloprincipal {
             font-size: 20px;
+
+            @media (min-width: 425px) and (max-width: 768px) {
+              font-size: 25px;
+            }
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+              font-size: 30px;
+            }
           }
           .titulosecundario {
             font-size: 15px;
+
+            @media (min-width: 425px) and (max-width: 768px) {
+              font-size: 20px;
+            }
+
+            @media (min-width: 769px) and (max-width: 1024px) {
+              font-size: 25px;
+            }
+          }
+
+          :nth-of-type(3) {
+            width: 35%;
           }
 
           td {
@@ -114,7 +135,3 @@ main {
     }
   }
 }
-
-
-
-

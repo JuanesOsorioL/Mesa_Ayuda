@@ -14,7 +14,8 @@
                 // $ArraySession=["Cedula"=>$cedula,"Nombre"=>$nombre,"Cargo"=>$cargo,"Area"=>$area];
                 $cedula=$this->objArea->getFKEmple();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                $objControlConexion->abrirBd();
+                //$objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
                 $comandoSql = "select IDAREA, NOMBRE from area where FKEMPLE = '".$cedula."'";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
               // return $rs->num_rows;///cantidad registros
@@ -41,7 +42,7 @@
         function consultarTodasAreas(){///funciona
             try {
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "select * from area";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 return $rs;
@@ -58,7 +59,7 @@
                 $id=$this->objArea->getIDArea();
                 $fkemple=$this->objArea->getFKEmple();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 if ($fkemple===NULL) {
                     $comandoSql = "update area set FKEMPLE = NULL where IDAREA = '".$id."'";
                 } else {
@@ -98,7 +99,7 @@
                 $fkemple=$this->objArea->getFKEmple();
             
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "insert into area (IDAREA , NOMBRE, FKEMPLE  ) values('".$id."','".$nom."','".$fkemple."')";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -112,7 +113,7 @@
                 $id=$this->objArea->getIDArea();
                 $nom=$this->objArea->getNombre();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "insert into area (IDAREA, NOMBRE) values('".$id."','".$nom."')";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -129,7 +130,7 @@
                 $id=$this->objArea->getIDArea();
                 $nom=$this->objArea->getNombre();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "update area set NOMBRE = '".$nom."' where IDAREA = '".$id."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();
@@ -142,7 +143,7 @@
             try {
                 $id=$this->objArea->getIDArea();
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd("localhost","root","","mesa_ayuda");
+                 $objControlConexion->abrirBd();
                 $comandoSql = "delete from area where IDAREA = '".$id."'";
                 $objControlConexion->ejecutarComandoSql($comandoSql);
                 $objControlConexion->cerrarBd();

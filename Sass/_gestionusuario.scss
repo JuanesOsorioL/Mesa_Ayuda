@@ -19,6 +19,14 @@ main {
       background-color: grey;
       text-align: center;
 
+      @media (min-width: 425px) and (max-width: 768px) {
+        width: 90%;
+      }
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        width: 80%;
+      }
+
       tr:nth-of-type(1) {
         font-size: 20px;
         @media (min-width: 425px) and (max-width: 768px) {
