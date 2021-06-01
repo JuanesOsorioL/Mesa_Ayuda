@@ -41,7 +41,6 @@
         $Cedula=$this->objUsuario->getFKIDEMPLEADO();
         $objControlConexion = new ControlConexion();
         $objControlConexion->abrirBd();
-       // $objControlConexion->abrirBd($GLOBALS['serv'],$GLOBALS['usua'],$GLOBALS['pass'],$GLOBALS['bdat']);
         $comandoSql ='CALL InactivarUnUsuario("'.$Cedula.'")';
         $resultado=$objControlConexion->ejecutarComandoSql($comandoSql);
         return $resultado;
@@ -56,7 +55,6 @@
         $Cedula=$this->objUsuario->getFKIDEMPLEADO();
         $objControlConexion = new ControlConexion();
         $objControlConexion->abrirBd();
-        //$objControlConexion->abrirBd($GLOBALS['serv'],$GLOBALS['usua'],$GLOBALS['pass'],$GLOBALS['bdat']);
         $comandoSql ='CALL ActivarUnUsuario("'.$Cedula.'")';
         $resultado=$objControlConexion->ejecutarComandoSql($comandoSql);
         return $resultado;
@@ -118,7 +116,7 @@
                 $usu=$this->objUsuario->getUSUARIO();
                 $con=$this->objUsuario->getPASS();	
                 $objControlConexion = new ControlConexion();
-                $objControlConexion->abrirBd($GLOBALS['serv'],$GLOBALS['usua'],$GLOBALS['pass'],$GLOBALS['bdat']);
+                $objControlConexion->abrirBd();
                 $comandoSql = "SELECT FKIDEMPLEADO,fkAREA,NOMBRE,FOTO,FKCARGO FROM usuario INNER JOIN empleado INNER JOIN cargo_por_empleado ON usuario.FKIDEMPLEADO=empleado.IDEMPLEADO && cargo_por_empleado.FKEMPLE = usuario.FKIDEMPLEADO where USUARIO = '".$usu."' && PASS = '".$con."' ";
                 $rs = $objControlConexion->ejecutarSelect($comandoSql);
                 $registro = $rs->fetch_array(MYSQLI_BOTH);

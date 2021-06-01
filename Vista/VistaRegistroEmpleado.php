@@ -78,7 +78,7 @@ function guardar(){
 
     try {
 
-      $objEmpleado=new Empleado($Cedula, "", "", "", "", "", "", "", "", "","", "", "","");
+      $objEmpleado=new Empleado($Cedula, "", "", "", "", "", "", "", "", "","", "", "","","");
       $objControlEmpleado=new ControlEmpleado($objEmpleado);
       $resValidacionEmple=$objControlEmpleado->ValidarEmpleado();
 
@@ -147,7 +147,7 @@ function CargarListarArea(){
 
   $objArea=new Area("","","");
   $objControlArea=new ControlArea($objArea);
-  $resultado=$objControlArea->consultarTodasAreas();
+  $resultado=$objControlArea->AllArea();
 
   while($row = $resultado->fetch_assoc()) { 
   ?>

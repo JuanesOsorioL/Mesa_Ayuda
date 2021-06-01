@@ -1,12 +1,43 @@
 <?php
-    class ControlArea
-    {
-        var $objArea;
+  class ControlArea{
+    var $objArea;
         
-         function __construct($objArea){
-            $this->objArea=$objArea;
-        } 
+    function __construct($objArea){
+      $this->objArea=$objArea;
+    } 
     
+    function AllArea(){
+      try {
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL ConsultarTodasLasAreas()';
+        $rs = $objControlConexion->ejecutarSelect($comandoSql);
+        return $rs;
+        $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+        echo "Error: " . $e->getMessage();
+      }
+    }
+    ///////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         function ConsultarCedulaEnArea(){ ////funciona
             try {
                // $ArrayAreas = array();
@@ -39,20 +70,7 @@
         //////////
 
 
-        function consultarTodasAreas(){///funciona
-            try {
-                $objControlConexion = new ControlConexion();
-                 $objControlConexion->abrirBd();
-                $comandoSql = "select * from area";
-                $rs = $objControlConexion->ejecutarSelect($comandoSql);
-                return $rs;
-                $objControlConexion->cerrarBd();
-            } catch(Exception $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }
 
-        ///////////////////
 
         function modificarAreaFkempleado() { ////fullciona
             try {

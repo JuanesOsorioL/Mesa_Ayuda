@@ -1,11 +1,103 @@
 <?php
-    class ControlEmpleado   
-    {
-        var $objEmpleado;
-        function __construct($objEmpleado){
-            $this->objEmpleado=$objEmpleado;
-        }
+  class ControlEmpleado{
+    var $objEmpleado;
+
+    function __construct($objEmpleado){
+      $this->objEmpleado=$objEmpleado;
+    }
     
+    function only_Employee(){
+      try {
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL ConsultarSoloEmpleadosActivos()';
+        $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
+        return $respuesta; 
+        $objControlConexion->cerrarBd();
+      }catch(Exception $e) {
+        echo "Error: ".$e->getMessage();
+      }
+    }
+
+    function EmployeeForCC(){
+      try {
+        $IDEmpleado=$this->objEmpleado->getIDEmpleado();
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL ConsultarEmpleadoPorCC('.$IDEmpleado.')';
+        $rs = $objControlConexion->ejecutarSelect($comandoSql);
+        if ($rs->num_rows!==0) {
+          $registro = $rs->fetch_array(MYSQLI_BOTH);
+          $Nombre=$registro["NOMBRE"];
+          $Foto=$registro["FOTO"];
+          $HojaVida=$registro["HOJAVIDA"];
+          $Telefono=$registro["TELEFONO"];
+          $Email=$registro["EMAIL"];
+          $Direccion=$registro["DIRECCION"];
+          $X=$registro["X"];
+          $Y=$registro["Y"];
+          $FKArea=$registro["fkAREA"];
+          $this->objEmpleado->setNombre($Nombre);
+          $this->objEmpleado->setFoto($Foto);
+          $this->objEmpleado->setHojaVida($HojaVida);
+          $this->objEmpleado->setTelefono($Telefono);
+          $this->objEmpleado->setEmail($Email);
+          $this->objEmpleado->setDireccion($Direccion);
+          $this->objEmpleado->setX($X);
+          $this->objEmpleado->setY($Y);
+          $this->objEmpleado->setFKArea($FKArea);
+          return $this->objEmpleado;
+        } else {
+          return null;
+        }
+        $objControlConexion->cerrarBd();
+      }catch(Exception $e){
+        echo "Error: " . $e->getMessage();
+      }
+    }
+
+    function UpdateEmployeeForCC(){
+      try {
+        $IDEmpleado=$this->objEmpleado->getIDEmpleado();
+        $Nombre=$this->objEmpleado->getNombre();
+        $Foto=$this->objEmpleado->getFoto();
+        $HojaVida=$this->objEmpleado->getHojaVida();
+        $Telefono=$this->objEmpleado->getTelefono();
+        $Email=$this->objEmpleado->getEmail();
+        $Direccion=$this->objEmpleado->getDireccion();
+        $X=$this->objEmpleado->getX();
+        $Y=$this->objEmpleado->getY();
+
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL UpdateAnEmployeeForCC("'.$Nombre.'","'.$Foto.'","'.$HojaVida.'","'.$Telefono.'","'.$Email.'","'.$Direccion.'",'.$X.','.$Y.',"'.$IDEmpleado.'")';
+        $resultado=$objControlConexion->ejecutarComandoSql($comandoSql);
+        return $resultado;
+       
+        $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+        echo "Error: " . $e->getMessage();
+      }
+    }
+//////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         function ValidarEmpleado(){////lista
             try {
                 $control=false;
@@ -88,22 +180,7 @@
 
        // ////
 
-       function ConsultarSoloEmpleados(){
-        try {
-           
-            $objControlConexion = new ControlConexion();
-             $objControlConexion->abrirBd();
-            $comandoSql = "SELECT IDEMPLEADO ,NOMBRE FROM empleado INNER JOIN cargo_por_empleado ON empleado.IDEMPLEADO=cargo_por_empleado.FKEMPLE where FKCARGO  != 1 ";
-            $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
-           /*  if ($respuesta->num_rows===1) {
-                $control=true;
-            } */
-            return $respuesta; 
-            $objControlConexion->cerrarBd();
-        } catch(Exception $e) {
-            echo "Error: " . $e->getMessage();
-        }
-    }
+      
 
             ///////////
             function ConsultarSoloNombre(){///funciona
@@ -128,47 +205,7 @@
             }
 
             ////////////////     
-            function consultar(){///funciona    
-                try {
-                    $IDEmpleado=$this->objEmpleado->getIDEmpleado();
-                    $objControlConexion = new ControlConexion();
-                     $objControlConexion->abrirBd();
-                    $comandoSql = "select * from Empleado where IDEMPLEADO = '".$IDEmpleado."' ";
-                    $rs = $objControlConexion->ejecutarSelect($comandoSql);
-                    
-                    if ($rs->num_rows!==0) {
-                        $registro = $rs->fetch_array(MYSQLI_BOTH);
-                        $Nombre=$registro["NOMBRE"];
-                        $Foto=$registro["FOTO"];
-                        $HojaVida=$registro["HOJAVIDA"];
-                        $Telefono=$registro["TELEFONO"];
-                        $Email=$registro["EMAIL"];
-                        $Direccion=$registro["DIRECCION"];
-                        $X=$registro["X"];
-                        $Y=$registro["Y"];
-                        $FKArea=$registro["fkAREA"];
-                       
-                        $this->objEmpleado->setNombre($Nombre);
-                        $this->objEmpleado->setFoto($Foto);
-                        $this->objEmpleado->setHojaVida($HojaVida);
-                        $this->objEmpleado->setTelefono($Telefono);
-                        $this->objEmpleado->setEmail($Email);
-                        $this->objEmpleado->setDireccion($Direccion);
-                        $this->objEmpleado->setX($X);
-                        $this->objEmpleado->setY($Y);
-                        $this->objEmpleado->setFKArea($FKArea);
-                        return $this->objEmpleado;
-                    } else {
-                        return null;
-                    }
-                    
-                    $objControlConexion->cerrarBd();
-                } catch(Exception $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-            }
-
-            ////////////
+            
 
 
         
@@ -259,4 +296,4 @@
             }
         }
     }
-?> 
+?>

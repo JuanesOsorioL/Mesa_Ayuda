@@ -1,5 +1,6 @@
-main {
- 
+.main_busqueda {
+  height: 980px;
+
   .main--consultaempleado {
     //color: #ffffff;
     margin-top: 20px;
@@ -12,6 +13,43 @@ main {
         tr {
           height: 30px;
           text-align: center;
+
+          td {
+            .btn-cambiar-foto,
+            .btn-cambiar-hoja {
+              color: #fff;
+              background-color: #fb8b89;
+              border-color: #fb8b89;
+
+              display: inline;
+              font-weight: 400;
+              text-align: center;
+              white-space: nowrap;
+              vertical-align: middle;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              border: 1px solid #000000;
+              padding: 0px 22px;
+              font-size: 1rem;
+              line-height: 1.5;
+              border-radius: 0.25rem;
+              transition: color 0.15s ease-in-out,
+                background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+
+            .form--input-foto,
+            .form--input-cv {
+              display: none;
+              //visibility: hidden;
+            }
+
+            .iframe-hoja {
+              zoom: 1.5;
+            }
+          }
           .td--tituloprincipal {
             font-size: 20px;
           }
@@ -68,8 +106,7 @@ main {
       }
 
       #resultadoconsulta {
-
-        h1{
+        h1 {
           font-size: 20px;
           margin-top: 10px;
           text-align: center;
@@ -79,16 +116,21 @@ main {
           margin-top: 10px;
 
           tr {
-            .td--cedula{
+            .td--cedula {
               border-spacing: 0px;
               font-size: 15px;
             }
 
-            .td--titulosecundario{float: left;}
-            td {
+            .td--titulosecundario {
+              float: left;
+            }
 
-             
-            
+            td {
+              #Foto {
+                width: 139px;
+                height: 140px;
+              }
+
               .input--texto {
                 width: 80%;
               }

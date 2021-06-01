@@ -3,39 +3,49 @@
 	{
 		var $IDEmpleado;
 		var $Nombre;
-        var $Foto;
-        var $HojaVida;
-        var $Telefono;
-        var $Email;
-        var $Direccion;
-        var $X;
-        var $Y;
+		var $Foto;
+    var $HojaVida;
+    var $Telefono;
+    var $Email;
+		var $Direccion;
+		var $X;
+		var $Y;
 		var $FKArea;
 		var $FKEmple_Jefe;
 		var $FKCargo;
 		var $FechaInicio;
 		var $FechaFin;
+	//	var $Estado;
 
 		function __construct($idempleado, $nombre, $foto, $hojavida, $telefono, $email, $direccion, $x, $y, $fkarea, $fkemple_jefe,
 		$fkcargo,$fechainicio,$fechafin){
 
-            $this->IDEmpleado=$idempleado;
-            $this->Nombre=$nombre;
-            $this->Foto=$foto;
-            $this->HojaVida=$hojavida;
-            $this->Telefono=$telefono;
-            $this->Email=$email;
-            $this->Direccion=$direccion;
-            $this->X=$x;
-            $this->Y=$y;
+			$this->IDEmpleado=$idempleado;
+			$this->Nombre=$nombre;
+			$this->Foto=$foto;
+			$this->HojaVida=$hojavida;
+			$this->Telefono=$telefono;
+			$this->Email=$email;
+			$this->Direccion=$direccion;
+			$this->X=$x;
+			$this->Y=$y;
 			$this->FKArea=$fkarea;
 			$this->FKEmple_Jefe=$fkemple_jefe;
 			$this->FKCargo=$fkcargo;
 			$this->FechaInicio=$fechainicio;
 			$this->FechaFin=$fechafin;
+		//	$this->Estado=$estado;
 		}
 
 ///////////
+/* 		function setEstado($estado){
+			$this->Estado=$estado;
+		}
+
+		function getEstado(){
+			return $this->Estado;
+		} */
+
 		function setFechaFin($fechafin){
 			$this->FechaFin=$fechafin;
 		}

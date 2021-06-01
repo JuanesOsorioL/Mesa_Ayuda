@@ -159,6 +159,8 @@
     })
   };
 
+
+
   function lock(e){
     if (control) {
       let Nodo = e.target.parentNode;

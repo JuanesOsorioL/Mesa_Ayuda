@@ -63,6 +63,9 @@
           '.$valores.' 
           </table>';
 
+
+         
+
       break;
 
       case "Locked":

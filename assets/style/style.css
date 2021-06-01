@@ -8,31 +8,69 @@ main {
   background-color: #130201;
 }
 
-main .main--consultaempleado {
+.main_busqueda {
+  height: 980px;
+}
+
+.main_busqueda .main--consultaempleado {
   margin-top: 20px;
   font-size: 10px;
 }
 
-main .main--consultaempleado .consultaempleado--form table {
+.main_busqueda .main--consultaempleado .consultaempleado--form table {
   margin: auto;
   background-color: grey;
   border: 2px solid #ffffff;
 }
 
-main .main--consultaempleado .consultaempleado--form table tr {
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr {
   height: 30px;
   text-align: center;
 }
 
-main .main--consultaempleado .consultaempleado--form table tr .td--tituloprincipal {
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr td .btn-cambiar-foto,
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr td .btn-cambiar-hoja {
+  color: #fff;
+  background-color: #fb8b89;
+  border-color: #fb8b89;
+  display: inline;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #000000;
+  padding: 0px 22px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr td .form--input-foto,
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr td .form--input-cv {
+  display: none;
+}
+
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr td .iframe-hoja {
+  zoom: 1.5;
+}
+
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr .td--tituloprincipal {
   font-size: 20px;
 }
 
-main .main--consultaempleado .consultaempleado--form table tr .td--titulosecundario {
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr .td--titulosecundario {
   font-size: 15px;
 }
 
-main .main--consultaempleado .consultaempleado--form table tr .input--texto {
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr .input--texto {
   display: block;
   width: 90%;
   padding: 0px 0px;
@@ -50,7 +88,7 @@ main .main--consultaempleado .consultaempleado--form table tr .input--texto {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
-main .main--consultaempleado .consultaempleado--form table tr .input-btn {
+.main_busqueda .main--consultaempleado .consultaempleado--form table tr .input-btn {
   margin: 5px 0px;
   color: #ffffff;
   background-color: #14c91c;
@@ -75,35 +113,40 @@ main .main--consultaempleado .consultaempleado--form table tr .input-btn {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta h1 {
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta h1 {
   font-size: 20px;
   margin-top: 10px;
   text-align: center;
   color: #ff0000;
 }
 
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table {
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta table {
   margin-top: 10px;
 }
 
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr {
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr {
   text-align: center;
 }
 
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--cedula {
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--cedula {
   border-spacing: 0px;
   font-size: 15px;
 }
 
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--titulosecundario {
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr .td--titulosecundario {
   float: left;
 }
 
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input--texto {
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td #Foto {
+  width: 139px;
+  height: 140px;
+}
+
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input--texto {
   width: 80%;
 }
 
-main .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input-btn {
+.main_busqueda .main--consultaempleado .consultaempleado--form #resultadoconsulta table tr td .input-btn {
   background-color: #fb8b89;
   border-color: #fb8b89;
 }
