@@ -13,7 +13,7 @@
                     <li class="ul--li" ><a class="ul__li--a" id="GestionUsuario" href="./GestionUsuarios.php">Gestionar Usuarios</a></li>
                     <li class="ul--li" ><a class="ul__li--a" id="GestionArea" href="./GestionArea.php">Gestión de Áreas</a></li>
                     <li class="ul--li" ><a class="ul__li--a" id="GestionEmpleado" href="./ConsultarEmpleado.php">Empleados</a></li>
-                    <li class="ul--li" ><a class="ul__li--a" href="">Cargos</a></li>
+                    <li class="ul--li" ><a class="ul__li--a" id="GestionCargos" href="./GestionCargos.php">Cargos</a></li>
                     <li class="ul--li" ><a class="ul__li--a" href="./Consultas.php">Consultas</a></li>
                     <li class="ul--li" ><a class="ul__li--a" href="">Informes</a></li>
                 </ul>

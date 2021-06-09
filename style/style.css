@@ -1127,4 +1127,191 @@ main .main__section-Mensaje h1 {
   text-align: center;
   color: #ffffff;
 }
+
+main .main__sectionCargo {
+  margin-top: 30px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla {
+  width: calc(8.3% * 11);
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo {
+  color: #ffffff;
+  margin: auto;
+  width: 90%;
+  background-color: gray;
+  border-radius: 10px;
+  padding: 3px;
+  border: 2px solid black;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td .contenedor-icon {
+  margin: 2px;
+  display: inline;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td .contenedor-icon i:nth-of-type(2) {
+  display: none;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td .contenedor-icon i {
+  color: #ffffff;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td .contenedor-icon i:hover {
+  color: #00ff55;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td .contenedor-icon:nth-of-type(2) {
+  margin: 2px;
+  display: inline;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td .contenedor-icon:nth-of-type(2) i {
+  color: #ffffff;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td .contenedor-icon:nth-of-type(2) i:hover {
+  color: #ff0000;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td input {
+  text-align: center;
+  display: block;
+  width: 95%;
+  padding: 0px 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td input:enabled {
+  background-color: white;
+}
+
+main .main__sectionCargo .main__sectionCargo-tabla .table_cargo tr td input:disabled {
+  background-color: black;
+}
+
+main .main__sectionCargo .main__sectionCargo-btn {
+  color: #ffffff;
+  font-size: 20px;
+  width: calc(8.3% * 1);
+}
+
+main .main_section-VentanaNew .section-Ventananew {
+  position: fixed;
+  width: 100vw;
+  height: 194%;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: right;
+  top: 0px;
+  width: 100vw;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor {
+  margin: auto;
+  position: relative;
+  padding: 5px;
+  width: 305px;
+  top: 11%;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table {
+  margin: auto;
+  background-color: grey;
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(1) td {
+  text-align: center;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(2) td input {
+  text-align: center;
+  display: block;
+  width: 95%;
+  padding: 0px 0px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(2) td input:enabled {
+  background-color: white;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(2) td input:disabled {
+  background-color: black;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(3) td {
+  text-align: center;
+  padding: 9px;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(3) td span {
+  border: 1px solid #000000;
+  padding: 3px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(3) td span i {
+  margin-left: 10px;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(3) td span:nth-of-type(1) {
+  background-color: green;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(3) td span:nth-of-type(1):hover {
+  background-color: #9fff9f;
+  color: #000000;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(3) td span:nth-of-type(2) {
+  background-color: red;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(3) td span:nth-of-type(2):hover {
+  background-color: #ff9494;
+  color: #000000;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(4) td {
+  text-align: center;
+}
+
+main .main_section-VentanaNew .section-Ventananew .section_Ventananew-contenedor table tr:nth-of-type(4) td span {
+  color: #ff0000;
+}
 /*# sourceMappingURL=style.css.map */

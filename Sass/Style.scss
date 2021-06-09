@@ -1,21 +1,19 @@
 * {
-    padding: 0px;
-    margin: 0px;
-  }
+  padding: 0px;
+  margin: 0px;
+}
 
-main{
+main {
   height: 670px;
   background-color: #130201;
 }
 
-
 @import "administrarempleado";
-@import "gestionarea"; 
-@import "header"; 
-@import "loguin"; 
-@import "registaremple"; 
-@import "nav"; 
+@import "gestionarea";
+@import "header";
+@import "loguin";
+@import "registaremple";
+@import "nav";
 @import "footer";
 @import "gestionusuario";
-
-
+@import "gestioncargos";

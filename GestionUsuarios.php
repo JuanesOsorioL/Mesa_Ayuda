@@ -13,8 +13,9 @@
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <!-- Style -->
-    <link rel="stylesheet" href="./assets/style/style.css">
+   <!-- Style -->
+    <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
+    <link rel="stylesheet" href="./style/style.css">
 
     <title>Gestionar Usuarios</title>
 
@@ -146,7 +147,7 @@
       type: 'POST',
       data: ruta,
     }).done(function (respu) {
-      console.log(respu);
+    
       if (parseInt(respu) === 1) {
         $('.resultado').html("Se actualizo correctamente");
       } else {
@@ -260,6 +261,7 @@
       e.target.style.display = "none";
       e.target.previousElementSibling.style.display = "initial";
       control = true;
+       document.querySelector(".resultado").textContent="";////////////////
       Update(user.value, pass.value, Cedula);
     } else {
       document.querySelector(".resultado").textContent="Primero Guardar Cambios";

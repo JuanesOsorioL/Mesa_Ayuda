@@ -35,3 +35,9 @@ if (window.location.pathname === "/Mesa_Ayuda/GestionUsuarios.php") {
   document.getElementById("GestionUsuario").attributes[2].value = "./Menu.php";
   document.getElementById("GestionUsuario").style.color = "#000000";
 }
+
+if (window.location.pathname === "/Mesa_Ayuda/GestionCargos.php") {
+  document.getElementById("GestionCargos").textContent = "Menu";
+  document.getElementById("GestionCargos").attributes[2].value = "./Menu.php";
+  document.getElementById("GestionCargos").style.color = "#000000";
+}

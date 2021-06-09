@@ -2,8 +2,8 @@
 class ControlConexion{
 
 	var $Servidor="localhost";
-	var	$Usuario="root";
-	var	$Pass="";
+	var	$Usuario="root";//"" para phpmyadmin
+	var	$Pass="root";
 	var	$baseDatos="mesa_ayuda";
 	var $conn;
 

@@ -2,8 +2,9 @@
 <html lang="en">
 
   <head>
-    <!-- Style -->
-    <link rel="stylesheet" href="./assets/style/style.css">
+   <!-- Style -->
+    <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
+    <link rel="stylesheet" href="./style/style.css">
 
     <meta charset="UTF-8">
 

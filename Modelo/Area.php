@@ -8,7 +8,7 @@
 		function __construct($id, $nombre,$fkempleado){
 			$this->IDArea=$id;
 			$this->Nombre=$nombre;
-            $this->FKEmple=$fkempleado;
+      $this->FKEmple=$fkempleado;
 		}
 
 		function setIDArea($id){

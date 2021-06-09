@@ -62,10 +62,6 @@
             </tr>
           '.$valores.' 
           </table>';
-
-
-         
-
       break;
 
       case "Locked":
