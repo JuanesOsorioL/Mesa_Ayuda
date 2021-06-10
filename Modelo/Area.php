@@ -3,9 +3,9 @@
 	{
 		var $IDArea;
 		var $Nombre;
-        var $FKEmple;
+    var $FKEmple;
 	
-		function __construct($id, $nombre,$fkempleado){
+		function __construct($id, $nombre, $fkempleado){
 			$this->IDArea=$id;
 			$this->Nombre=$nombre;
       $this->FKEmple=$fkempleado;

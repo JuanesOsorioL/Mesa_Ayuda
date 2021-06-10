@@ -18,6 +18,22 @@
         echo "Error: " . $e->getMessage();
       }
     }
+
+    function AllAreaAlert(){
+      try {
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL AllAreaAlert()';
+        $rs = $objControlConexion->ejecutarSelect($comandoSql);
+        return $rs;
+        $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+        echo "Error: " . $e->getMessage();
+      }
+    }
+
+
+
     ///////////////////
 
 

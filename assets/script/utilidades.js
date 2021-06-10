@@ -18,6 +18,12 @@ function submenu() {
   }
 }
 
+if (window.location.pathname === "/Mesa_Ayuda/Alertas.php") {
+  document.getElementById("Alertas").textContent = "Menu";
+  document.getElementById("Alertas").attributes[2].value = "./Menu.php";
+  document.getElementById("Alertas").style.color = "#000000";
+}
+
 if (window.location.pathname === "/Mesa_Ayuda/GestionArea.php") {
   document.getElementById("GestionArea").textContent = "Menu";
   document.getElementById("GestionArea").attributes[2].value = "./Menu.php";
