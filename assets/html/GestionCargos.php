@@ -5,27 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Style -->
-    <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
-    <link rel="stylesheet" href="./style/style.css">
 
+    <!-- Style -->
+    <link rel="stylesheet" href="../style/style.css">
+
+    <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <title>Gestion Area</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Gestion Cargos</title>
 
   </head>
 
   <?php 
-   include "./Vista/VistaMenu.php";
-   include "./Vista/VistaGestionAreas.php";
+   include "../script/view/VistaMenu.php";
+   include "../script/view/VistaGestionCargos.php";
   ?>
-
-
+  
   <body>
 
     <header>
       <div class="header--logo">
-        <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
+        <a href="../../index.php" class="bt-menu"><img class="header__a--img" src="../img/Logo.png" alt="logo"></a>
       </div>
 
       <div class="header--menu">
@@ -44,9 +46,9 @@
       </div>
 
       <div class="header--loguin">
-        <img class="header--img" src="<?php echo $_SESSION['Session']['Foto']?>" alt="" />
+        <img class="header--img" src="../<?php echo $_SESSION['Session']['Foto']?>" alt="" />
         <div class="header--ventanaLoguin">
-          <a href="./index.php">Logout</a>
+          <a href="../../index.php">Logout</a>
         </div>
       </div>
 
@@ -71,24 +73,17 @@
 
       </section>
 
-      <section class="main--sectionArea">
 
-        <form class="sectionArea--form" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
-          <table class="form--table">
-            <?php echo  $plantilla; ?>
+    <section class="main__sectionCargo"></section>
 
-            <tr>
-              <td colspan="3">
-                <input type="submit" value="Menu" name="btn" onclick="Menu();">
-                <input type="submit" value="Actualizar" name="btn">
-              </td>
-            </tr>
-          </table>
-        </form>
+    <section class="main_section-VentanaNew"></section>
 
+    <section class="main__section-Mensaje">
+        <h1 class="resultado"> </h1>
       </section>
 
-    </main>
+  </main>
+
 
   <footer>
 
@@ -116,6 +111,8 @@
   </footer>
 
   </body>
-  <script src="./assets/script/utilidades.js"> </script>
+
+  <script src="../script/view/javascript/Utilidades.js"> </script>
+  <script src="../script/view/javascript/GestionCargos.js"></script>
 
 </html>

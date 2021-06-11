@@ -56,12 +56,12 @@ function validacion(){
 
 function guardar(){
   if (validacion()==="true") {
-
-    include_once "./Modelo/Empleado.php";
-    include_once "./Control/ControlEmpleado.php";
-    include_once "./Modelo/Usuario.php";
-    include_once "./Control/ControlUsuario.php";
-    include_once "./Control/ControlConexion.php";
+   
+    include_once "../script/model/Empleado.php";
+    include_once "../script/controller/ControlEmpleado.php";
+    include_once "../script/model/Usuario.php";
+    include_once "../script/controller/ControlUsuario.php";
+    include_once "../script/controller/ControlConexion.php";
 
     $Cedula=$_POST["txtIDEmpleado"];
     $Nombre=$_POST["txtNombre"];
@@ -78,11 +78,12 @@ function guardar(){
 
     try {
 
-      $objEmpleado=new Empleado($Cedula, "", "", "", "", "", "", "", "", "","", "", "","","");
+       $objEmpleado=new Empleado($Cedula, "", "", "", "", "", "", "", "", "","", "", "","","");
       $objControlEmpleado=new ControlEmpleado($objEmpleado);
       $resValidacionEmple=$objControlEmpleado->ValidarEmpleado();
 
-      if ($resValidacionEmple) {
+
+       if ($resValidacionEmple->num_rows===1) {
         $msj="Ya existe la cedula: ".$Cedula;
       }else{
 
@@ -90,47 +91,47 @@ function guardar(){
         $objControlUsuario=new ControlUsuario($objUsuario);
         $resValidarUsu=$objControlUsuario->ValidarUsuario(); 
 
-        if ($resValidarUsu) {
+        if ($resValidarUsu->num_rows===1) {
           $msj="Ya existe el Usuario";
         }else{
-
           if (isset ($_FILES['Imagen'])) {
-            $RutaImg = "uploads/".strval($Cedula).$_FILES['Imagen']['name'];
-            move_uploaded_file($_FILES['Imagen']['tmp_name'], $RutaImg); 
+           // $RutaImgss = "uploads/".strval($Cedula).$_FILES['Imagen']['name'];
+            $RutaImg = "uploads/".strval($Cedula).".jpg";
+            $RutaImgtemp="../".$RutaImg;
+            move_uploaded_file($_FILES['Imagen']['tmp_name'],$RutaImgtemp); 
           }
-  
           if (isset ($_FILES['HojaVida'])) {
-            $RutaHoja = "uploads/".strval($Cedula).$_FILES['HojaVida']['name'];
-            move_uploaded_file($_FILES['HojaVida']['tmp_name'], $RutaHoja); 
+           //$RutaHoja = "uploads/".strval($Cedula).$_FILES['HojaVida']['name'];
+            $RutaHoja = "uploads/".strval($Cedula).".pdf";
+            $RutaHojatemp="../".$RutaHoja;
+            move_uploaded_file($_FILES['HojaVida']['tmp_name'], $RutaHojatemp); 
           } 
 
           $FKCARGO =2;
-          $FECHAINI=(new DateTime('now'))->format("Y-m-d h:i:s");
+          $FECHAFIN='0000-00-00';
+          $FECHAINI=(new DateTime('now'))->format("Y-m-d");
+          $objEmpleado=new Empleado($Cedula, $Nombre, $RutaImg, $RutaHoja, $Telefono, $Email, $Direccion, $X, $Y, $Area, "", $FKCARGO,  $FECHAINI,$FECHAFIN);
 
-          $objEmpleado=new Empleado($Cedula, $Nombre, $RutaImg, $RutaHoja, $Telefono, $Email, $Direccion, $X, $Y, $Area, "", $FKCARGO,  $FECHAINI,"");
           $objControlEmpleado=new ControlEmpleado($objEmpleado);
           $resGuardarEmple=$objControlEmpleado->GuardarEmpleado();
 
-          if ($resGuardarEmple) {
+          if ($resGuardarEmple==1) {
 
             $objUsuario=new Usuario($Usuario, $Pass, $Cedula);
             $objControlUsuario=new ControlUsuario($objUsuario);
             $resGuardarUsua=$objControlUsuario->GuardarUsuario();
-
-             if ($resGuardarUsua) {
-
+            $msj= $resGuardarUsua;
+            if ($resGuardarUsua==1) {
               $msj="Empleado Guardado Con Exito";
-             // return $msj;
             } else {
-                $msj="No se guardo Usuario y Contraseña Informar al administrador";
-               // return $msj;
-            } 
+              $msj="No se guardo Usuario y Contraseña Informar al administrador";
+            }  
           } else {
             $msj="No se registro la Cedula: ".$Cedula;
-            //return $msj;
-          }     
-        }
-      }
+          } 
+        }  
+      } 
+
      return $msj;
     } catch(PDOException $e) {
       echo "Error: " . $e->getMessage();
@@ -141,14 +142,13 @@ function guardar(){
 }
 
 function CargarListarArea(){
-  include_once "./Control/ControlConexion.php";
-  include_once "./Control/ControlArea.php";
-  include_once "./Modelo/Area.php";
+  include_once "../script/controller/ControlConexion.php";
+  include_once "../script/controller/ControlArea.php";
+  include_once "../script/model/Area.php";
 
   $objArea=new Area("","","");
   $objControlArea=new ControlArea($objArea);
   $resultado=$objControlArea->AllArea();
-
   while($row = $resultado->fetch_assoc()) { 
   ?>
     <option value="<?php echo $row['IDAREA'] ?>"> <?php echo $row['NOMBRE'];?> </option>

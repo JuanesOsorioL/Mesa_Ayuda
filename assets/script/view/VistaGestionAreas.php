@@ -1,10 +1,10 @@
 <?php
 
-  include_once "./Modelo/Area.php";
-  include_once "./Control/ControlArea.php";
-  include_once "./Modelo/Empleado.php";
-  include_once "./Control/ControlEmpleado.php";
-  include_once "./Control/ControlConexion.php";
+  include_once "../script/model/Area.php";
+  include_once "../script/controller/ControlArea.php";
+  include_once "../script/model/Empleado.php";
+  include_once "../script/controller/ControlEmpleado.php";
+  include_once "../script/controller/ControlConexion.php";
 
   $objArea=new Area("","","");
   $objControlArea=new ControlArea($objArea);

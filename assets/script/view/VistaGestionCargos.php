@@ -2,22 +2,19 @@
   if (isset($_POST['Action'])) {
 
     $Funcion=$_POST['Action'];
-    include "../Modelo/Cargo.php";
-    include "../Control/ControlCargo.php";
-    include "../Control/ControlConexion.php";
+    include "../model/Cargo.php";
+    include "../controller/ControlCargo.php";
+    include "../controller/ControlConexion.php";
 
     switch ($Funcion) {
 
       case 'LoadPage':
-
         $objCargo=new Cargo("","");
         $objControlCargo=new ControlCargo($objCargo);
         $respuestaCargo=$objControlCargo-> AllPositions();
         $ArrayCargo=$respuestaCargo->fetch_all(MYSQLI_ASSOC);
         $items='';
-
         foreach ($ArrayCargo as $key => $value) {
-
         $accion=($value['Estado']==='Activo')?
           '<td>
               <div class="contenedor-icon">
@@ -93,7 +90,7 @@
       break;
 
       case 'Delete':
-        include "../Modelo/Empleado.php";
+        include "../model/Empleado.php";
         $id=$_POST['id'];
         $FechaActual=$_POST['FechaActual'];
         $FechaInicial=$_POST['FechaInicial'];

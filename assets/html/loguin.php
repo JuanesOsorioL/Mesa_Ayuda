@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Style -->
-    <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
-    <link rel="stylesheet" href="./style/style.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="../style/style.css">
 
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
-
     <title>Loguin</title>
 </head>
 <body>
 
  <header>
     <div class="header--logo">
-        <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
+        <a href="../../index.php" class="bt-menu"><img class="header__a--img" src="../img/Logo.png" alt="logo"></a>
     </div>
 
 
@@ -38,19 +35,14 @@
 
     </div>
 
-
-
-
     <div class="header--loguin">
-        <img class="header--img" src="./img/loguin.jpg" alt="" />
+        <img class="header--img" src="../img/loguin.jpg" alt="" />
 
         <div class="header--ventanaLoguin">
             <a href="./RegistrarEmpleado.php">Registrar</a>
-            <a href="./loguin.php">Loguin</a>
-
         </div>
-
     </div>
+
 </header>
 
     <main>
@@ -82,7 +74,7 @@
                 
                  if (isset($_POST['btn'])) {
 
-                    include_once "./Vista/VistaIngresar.php";
+                    include_once "../script/view/VistaIngresar.php";
                     $bot=$_POST["btn"];
                     $usu=$_POST["txtUsuario"];
                     $con=$_POST["txtPassword"];
@@ -93,7 +85,7 @@
                         break;
 
                        case 'Cancelar':
-                        header("Location: ./index.php");
+                        header("Location: ../../index.php");
                         break; 
                         
                         default:

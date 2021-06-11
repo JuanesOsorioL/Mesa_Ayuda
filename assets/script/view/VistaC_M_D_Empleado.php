@@ -7,11 +7,11 @@ if (isset($_POST['Accion'])) {
   switch ($bot) {
 
     case 'Consultar':
-      include "../Modelo/Empleado.php";
-      include "../Control/ControlEmpleado.php";
-      include "../Control/ControlConexion.php";
-      include "../Modelo/Area.php";
-      include "../Control/ControlArea.php";
+      include "../model/Empleado.php";
+      include "../controller/ControlEmpleado.php";
+      include "../controller/ControlConexion.php";
+      include "../model/Area.php";
+      include "../controller/ControlArea.php";
 
       $Cedula=$_POST["txtIDEmpleado"];
       $objEmpleado=new Empleado($Cedula, "", "", "", "", "", "", "", "", "","","","","","");
@@ -69,7 +69,7 @@ if (isset($_POST['Accion'])) {
             </td>
 
             <td>
-              <img class="header--img" id="Foto" src="./'.$Foto.'" alt="'.$Nombre.'" />
+              <img class="header--img" id="Foto" src="../'.$Foto.'" alt="'.$Nombre.'" />
 
               <input name="CFoto" class="form--input-foto" type="file" onChange="file_foto(event)">
 
@@ -93,7 +93,7 @@ if (isset($_POST['Accion'])) {
 
                <input class="form--input-cv" type="text" name="urlCV" value="'.$HojaVida.'"/>
 
-               <iframe class="iframe-hoja" id="Hoja_vida" src="./'.$HojaVida.'" width="85px" height="110px"></iframe>
+               <iframe class="iframe-hoja" id="Hoja_vida" src="../'.$HojaVida.'" width="85px" height="110px"></iframe>
             </td>
 
           </tr>
@@ -150,11 +150,11 @@ if (isset($_POST['Accion'])) {
     case 'Modificar':
     
       if (isset ($_FILES['CFoto'])) {
-        move_uploaded_file($_FILES['CFoto']['tmp_name'],"./".$_POST['urlFoto']); 
+        move_uploaded_file($_FILES['CFoto']['tmp_name'],"../".$_POST['urlFoto']); 
       }
 
       if (isset ($_FILES['CV'])) {
-        move_uploaded_file($_FILES['CV']['tmp_name'],"./".$_POST['urlCV']); 
+        move_uploaded_file($_FILES['CV']['tmp_name'],"../".$_POST['urlCV']); 
       }
 
       $Cedula=$_POST['txtIDEmpleado'];
@@ -167,13 +167,9 @@ if (isset($_POST['Accion'])) {
       $X=$_POST['txtX'];
       $Y=$_POST['txtY'];
 
-      //$Area=$_POST['selectArea'];
-
-    /*         echo(" ". $Cedula.",".$Nombre.",".$Telefono.",".$Email.",".$Direccion.",".$X.",".$Y."");  */
-
-      include "./Modelo/Empleado.php";
-      include "./Control/ControlEmpleado.php";
-      include "./Control/ControlConexion.php";
+      include "../script/model/Empleado.php";
+      include "../script/controller/ControlEmpleado.php";
+      include "../script/controller/ControlConexion.php";
       
       $objEmpleados=new Empleado($Cedula, $Nombre, $UrlFoto, $HojaVida, $Telefono, $Email, $Direccion, $X, $Y,"","","","","");
       $objControlEmpleado=new ControlEmpleado($objEmpleados);

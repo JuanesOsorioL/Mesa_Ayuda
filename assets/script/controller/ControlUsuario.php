@@ -63,36 +63,29 @@
         echo "Error: " . $e->getMessage();
       }
     }
-    ///////////////////
 
-    function ValidarUsuario(){//funciona
+    function ValidarUsuario(){
       try {
-        $control=false;
         $usu=$this->objUsuario->getUSUARIO();
         $objControlConexion = new ControlConexion();
         $objControlConexion->abrirBd();
-        //$objControlConexion->abrirBd($GLOBALS['serv'],$GLOBALS['usua'],$GLOBALS['pass'],$GLOBALS['bdat']);
-        $comandoSql = "select ID from usuario where USUARIO = '".$usu."'";
+        $comandoSql ='CALL ValidateUser("'.$usu.'")';
         $respuesta = $objControlConexion->ejecutarSelect($comandoSql);
-        if ($respuesta->num_rows===1) {
-            $control=true;
-        } 
-        return $control;
+       return $respuesta;
         $objControlConexion->cerrarBd();
       } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
       }
     }
 
-    function GuardarUsuario(){///funciona
+    function GuardarUsuario(){
       try {
         $usu=$this->objUsuario->getUSUARIO();
         $con=$this->objUsuario->getPASS();
         $idemple=$this->objUsuario->getFKIDEMPLEADO();
         $objControlConexion = new ControlConexion();
         $objControlConexion->abrirBd();
-        //$objControlConexion->abrirBd($GLOBALS['serv'],$GLOBALS['usua'],$GLOBALS['pass'],$GLOBALS['bdat']);
-        $comandoSql = "insert into usuario (USUARIO, PASS, FKIDEMPLEADO) values('".$usu."','".$con."','".$idemple."')";
+        $comandoSql ='CALL SaveUsuario("'.$usu.'","'.$con.'","'.$idemple.'")';
         $respuesta=$objControlConexion->ejecutarComandoSql($comandoSql);
         return $respuesta;
         $objControlConexion->cerrarBd();
@@ -101,15 +94,7 @@
       }
     }
         
-
-
-/*         $comandoSql = "select ID,FKIDEMPLEADO from usuario where USUARIO = '".$usu."' && PASS = '".$con."' ";
-
-        "SELECT nombre_columna FROM tableA INNER JOIN tableB ON tableA.nombre_columna=tableB.nombre_columna"
-         "SELECT FKIDEMPLEADO,NOMBRE FROM usuario INNER JOIN empleado ON usuario.FKIDEMPLEADO=empleado.IDEMPLEADO where USUARIO = '".$usu."' && PASS = '".$con."' ";
- */
-
-//////
+////////////////////////////////
 
         function ValidarLoguin(){ ////funciona
             try {

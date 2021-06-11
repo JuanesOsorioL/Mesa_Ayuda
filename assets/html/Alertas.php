@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
       <!-- Style -->
-      <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
-      <link rel="stylesheet" href="./style/style.css">
+      <link rel="stylesheet" href="../style/style.css">
 
       <!-- fontawesome -->
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Alertas</title>
-  <?php include "./Vista/VistaMenu.php";?>
+
+  <?php include "../script/view/VistaMenu.php";?>
   </head>
 
   <body>
@@ -23,7 +22,7 @@
     <header>
 
       <div class="header--logo">
-        <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
+        <a href="../../index.php" class="bt-menu"><img class="header__a--img" src="../img/Logo.png" alt="logo"></a>
       </div>
       <div class="header--menu">
         <span>Menu</span>
@@ -59,9 +58,9 @@
       </div>
 
       <div class="header--loguin">
-        <img class="header--img" src="<?php echo $_SESSION['Session']['Foto']?>" alt="" />
+        <img class="header--img" src="../<?php echo $_SESSION['Session']['Foto']?>" alt="" />
         <div class="header--ventanaLoguin">
-          <a href="./index.php">Logout</a>
+          <a href="../../index.php">Logout</a>
         </div>
       </div>
 
@@ -118,7 +117,7 @@
 
   </body>
 
-  <script src="./assets/script/utilidades.js"> </script>
-  <script src="./assets/script/View/Javascript/Alertas.js"> </script>
+  <script src="../script/view/javascript/Utilidades.js"> </script>
+  <script src="../script/view/javascript/Alert.js"></script>
   
 </html>

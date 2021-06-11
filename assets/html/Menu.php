@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Style -->
-    <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
-    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="./assets/script/utilidades.js"> </script>
+    <script src="../script/view/javascript/Utilidades.js"> </script>
     <title>Menu</title>
 </head>
-<?php   include "./Vista/VistaMenu.php"; ?>
+<?php   include "../script/view/VistaMenu.php"; ?>
 
 <body>
     <header>
         <div class="header--logo">
-            <a href="./index.php" class="bt-menu"><img class="header__a--img" src="./img/Logo.png" alt="logo"></a>
+            <a href="../../index.php" class="bt-menu"><img class="header__a--img" src="../img/Logo.png" alt="logo"></a>
         </div>
 
         <div class="header--menu">
@@ -39,20 +39,15 @@
         </div>
 
         <div class="header--loguin">
-            <img class="header--img" src="<?php echo $_SESSION['Session']['Foto'];?>" alt="" />
+            <img class="header--img" src="../<?php echo $_SESSION['Session']['Foto'];?>" alt="" />
 
             <div class="header--ventanaLoguin">
-                <a href="./index.php">Logout</a>
-
-
+                <a href="../../index.php">Logout</a>
             </div>
 
         </div>
     </header>
 
-
-
-    
     <main>
         <section class="main--submenu">
             <div class="contenedor">

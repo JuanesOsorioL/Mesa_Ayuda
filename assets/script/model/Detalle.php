@@ -1,10 +1,6 @@
 <?php
 	class Detalle 
 	{
-/*         date_default_timezone_set("America/Bogota");
-        echo "Today is " . date("Y/m/d h:i:s") . "<br>";
- */
-
 		var $IDDETALLE;
 		var $FECHA;
         var $OBSERVACION;

@@ -3,10 +3,9 @@
   if (isset($_POST['Action'])) {
 
     $bot=$_POST['Action'];
-
-    include "../Modelo/Usuario.php";
-    include "../Control/ControlUsuario.php";
-    include "../Control/ControlConexion.php";
+    include "../model/Usuario.php";
+    include "../Controller/ControlUsuario.php";
+    include "../Controller/ControlConexion.php";
 
     switch ($bot) {
       
@@ -29,9 +28,7 @@
             <div class="contenedor-icon"> 
               <i class="fas fa-trash-alt" onclick="lock(event)"></i>
             </div>
-
             ':'
-
             <div class="contenedor-iconlock">
               <i class="fas fa-user-lock" onclick="unlock(event)"></i>
             </div>';

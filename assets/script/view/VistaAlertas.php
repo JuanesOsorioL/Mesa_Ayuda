@@ -2,9 +2,9 @@
    if (isset($_POST['Action'])) {
 
     $Funcion=$_POST['Action'];
-    include "../Modelo/Area.php";
-    include "../Control/ControlArea.php";
-    include "../Control/ControlConexion.php";
+    include "../model/Area.php";
+    include "../controller/ControlArea.php";
+    include "../controller/ControlConexion.php";
  
     switch ($Funcion) {
 

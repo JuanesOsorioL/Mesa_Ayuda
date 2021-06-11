@@ -6,7 +6,7 @@ function main() {
   Action = "LoadPage";
   let ruta = "Action=" + Action;
   $.ajax({
-    url: "./Vista/VistaAlertas.php",
+    url: "../script/view/VistaAlertas.php",
     type: "POST",
     data: ruta,
   })

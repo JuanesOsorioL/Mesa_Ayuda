@@ -67,19 +67,64 @@
         $Direccion=$this->objEmpleado->getDireccion();
         $X=$this->objEmpleado->getX();
         $Y=$this->objEmpleado->getY();
-
         $objControlConexion = new ControlConexion();
         $objControlConexion->abrirBd();
         $comandoSql ='CALL UpdateAnEmployeeForCC("'.$Nombre.'","'.$Foto.'","'.$HojaVida.'","'.$Telefono.'","'.$Email.'","'.$Direccion.'",'.$X.','.$Y.',"'.$IDEmpleado.'")';
         $resultado=$objControlConexion->ejecutarComandoSql($comandoSql);
         return $resultado;
-       
         $objControlConexion->cerrarBd();
       } catch(Exception $e) {
         echo "Error: " . $e->getMessage();
       }
     }
-//////////////
+
+    function ValidarEmpleado(){
+      try {
+        $Cedula=$this->objEmpleado->getIDEmpleado();
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL ValidateEmployee("'.$Cedula.'")';
+        $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
+        return $respuesta;
+        $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+      echo "Error: " . $e->getMessage();
+      }
+    }
+
+    function GuardarEmpleado(){
+      try {
+        $Cedula=$this->objEmpleado->getIDEmpleado();
+        $Nombre=$this->objEmpleado->getNombre();
+        $Foto=$this->objEmpleado->getFoto();
+        $HojaVida=$this->objEmpleado->getHojaVida();
+        $Telefono=$this->objEmpleado->getTelefono();
+        $Email=$this->objEmpleado->getEmail();
+        $Direccion=$this->objEmpleado->getDireccion();
+        $X=$this->objEmpleado->getX();
+        $Y=$this->objEmpleado->getY();
+        $FKArea=$this->objEmpleado->getFKArea();
+
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL SaveEmployee("'.$Cedula.'","'.$Nombre.'","'.$Foto.'","'.$HojaVida.'","'.$Telefono.'","'.$Email.'","'.$Direccion.'",'.$X.','.$Y.','.$FKArea.')';
+        $respuesta=$objControlConexion->ejecutarComandoSql($comandoSql);
+        if ($respuesta==1) {
+          $FKCARGO =$this->objEmpleado->getFKCargo();
+          $FKEMPLE =$Cedula;
+          $FECHAINI=$this->objEmpleado->getFechaInicio();
+          $FECHAFIN=$this->objEmpleado->getFechaFin();
+          $comandoSql ='CALL SaveCargo_por_empleado('.$FKCARGO.',"'.$FKEMPLE.'","'.$FECHAINI.'","'.$FECHAFIN.'")';
+           $res=$objControlConexion->ejecutarComandoSql($comandoSql);
+          return $res;
+        }else{
+          return false;
+        } 
+      $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+      echo "Error: " . $e->getMessage();
+      }
+    }
 
 
 
@@ -88,78 +133,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-        function ValidarEmpleado(){////lista
-            try {
-                $control=false;
-                $Cedula=$this->objEmpleado->getIDEmpleado();
-                $objControlConexion = new ControlConexion();
-                 $objControlConexion->abrirBd();
-                $comandoSql = "select NOMBRE from Empleado where IDEMPLEADO = '".$Cedula."' ";
-                $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
-                if ($respuesta->num_rows===1) {
-                    $control=true;
-                } 
-                return $control;
-                $objControlConexion->cerrarBd();
-            } catch(Exception $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }
-
-        function GuardarEmpleado(){///funciona
-            try {
-                $Cedula=$this->objEmpleado->getIDEmpleado();
-                $Nombre=$this->objEmpleado->getNombre();
-                $Foto=$this->objEmpleado->getFoto();
-                $HojaVida=$this->objEmpleado->getHojaVida();
-                $Telefono=$this->objEmpleado->getTelefono();
-                $Email=$this->objEmpleado->getEmail();
-                $Direccion=$this->objEmpleado->getDireccion();
-                $X=$this->objEmpleado->getX();
-                $Y=$this->objEmpleado->getY();
-                $FKArea=$this->objEmpleado->getFKArea();
-                
-                $objControlConexion = new ControlConexion();
-                 $objControlConexion->abrirBd();
-                $comandoSql = "insert into empleado (IDEMPLEADO, NOMBRE, FOTO, HOJAVIDA, TELEFONO, EMAIL, DIRECCION, X, Y, fkAREA)
-                values('".$Cedula."','".$Nombre."','".$Foto."','".$HojaVida."','".$Telefono."','".$Email."','".$Direccion."','".$X."','".$Y."','".$FKArea."')";
-                $respuesta=$objControlConexion->ejecutarComandoSql($comandoSql);
-               
-
-
-                if ($respuesta) {
-                    $FKCARGO =$this->objEmpleado->getFKCargo();
-                    $FKEMPLE =$Cedula;
-                    $FECHAINI=$this->objEmpleado->getFechaInicio();
-                    $FECHAFIN=$this->objEmpleado->getFechaFin();
-                    $comandoSql = "insert into cargo_por_empleado (FKCARGO , FKEMPLE , FECHAINI, FECHAFIN) values('".$FKCARGO."','".$FKEMPLE."','".$FECHAINI."','".$FECHAFIN."')";
-                    $res=$objControlConexion->ejecutarComandoSql($comandoSql);
-                    return $res;
-                }else{
-                    return false;
-                } 
- 
-                $objControlConexion->cerrarBd();
-            } catch(Exception $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }
-
-
-/*         "SELECT nombre_columna FROM tableA INNER JOIN tableB ON tableA.nombre_columna=tableB.nombre_columna"
-        "SELECT IDEMPLEADO ,NOMBRE FROM empleado INNER JOIN cargo_por_empleado ON empleado.IDEMPLEADO=cargo_por_empleado.FKEMPLE where FKCARGO  != 1";
-
- */
+    
 
         function ConsultarSoloEmpleadosPorArea(){///funciona
             try {
