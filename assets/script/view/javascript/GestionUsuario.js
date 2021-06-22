@@ -169,7 +169,7 @@ function guardar(e) {
     e.target.style.display = "none";
     e.target.previousElementSibling.style.display = "initial";
     control = true;
-    document.querySelector(".resultado").textContent = ""; ////////////////
+    document.querySelector(".resultado").textContent = "";
     Update(user.value, pass.value, Cedula);
   } else {
     document.querySelector(".resultado").textContent =

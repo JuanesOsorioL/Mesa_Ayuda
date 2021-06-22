@@ -34,7 +34,7 @@ main {
           color: #ffffff;
         }
         .section--subnav {
-        /*   width: 100%;
+          /*   width: 100%;
           margin-top: 13px; */
 
           width: 100%;
@@ -66,7 +66,7 @@ main {
 
               &:hover {
                 width: 50%;
-               padding: 10px;
+                padding: 10px;
                 background-color: rgb(226, 105, 105);
                 transition: 1s;
               }
@@ -86,18 +86,16 @@ main {
   }
 }
 
+//@media (min-width: 769px) and (max-width: 2400px) {
 @media (min-width: 769px) and (max-width: 1440px) {
-
   .ampliar {
     height: initial;
   }
 
-
-
   main {
     .main--submenu {
       .contenedor {
-       // background-color: brown;
+        // background-color: brown;
 
         .contenedor-icono {
           display: none;
@@ -118,7 +116,7 @@ main {
             transition: 1s;
           }
           .section--subnav {
-            position:initial;
+            position: initial;
             width: calc(8.3% * 9);
             margin-top: 0px;
 

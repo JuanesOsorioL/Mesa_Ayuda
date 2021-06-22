@@ -18,6 +18,39 @@ function submenu() {
   }
 }
 
+if (window.location.pathname === "/Mesa_Ayuda/assets/html/AsignarCargo.php") {
+  document.getElementById("Asignarcargo").textContent = "Menu";
+  document.getElementById("Asignarcargo").attributes[2].value = "./Menu.php";
+  document.getElementById("Asignarcargo").style.color = "#000000";
+}
+
+if (window.location.pathname === "/Mesa_Ayuda/assets/html/Informes.php") {
+  document.getElementById("Informe").textContent = "Menu";
+  document.getElementById("Informe").attributes[2].value = "./Menu.php";
+  document.getElementById("Informe").style.color = "#000000";
+}
+
+if (
+  window.location.pathname === "/Mesa_Ayuda/assets/html/MisRequerimientos.php"
+) {
+  document.getElementById("MisRequerimientos").textContent = "Menu";
+  document.getElementById("MisRequerimientos").attributes[2].value =
+    "./Menu.php";
+  document.getElementById("MisRequerimientos").style.color = "#000000";
+}
+
+if (window.location.pathname === "/Mesa_Ayuda/assets/html/Requerimiento.php") {
+  document.getElementById("Requerimiento").textContent = "Menu";
+  document.getElementById("Requerimiento").attributes[2].value = "./Menu.php";
+  document.getElementById("Requerimiento").style.color = "#000000";
+}
+
+if (window.location.pathname === "/Mesa_Ayuda/assets/html/Consultas.php") {
+  document.getElementById("Consultas").textContent = "Menu";
+  document.getElementById("Consultas").attributes[2].value = "./Menu.php";
+  document.getElementById("Consultas").style.color = "#000000";
+}
+
 if (window.location.pathname === "/Mesa_Ayuda/assets/html/Alertas.php") {
   document.getElementById("Alertas").textContent = "Menu";
   document.getElementById("Alertas").attributes[2].value = "./Menu.php";

@@ -9,9 +9,9 @@
             case 'Seleccionar':
                 echo print_r($_SESSION['Array']);
 
-                include "../Modelo/Empleado.php";
-                include "../Control/ControlEmpleado.php"; 
-                include "../Control/ControlConexion.php";
+                include "../model/Empleado.php";
+                include "../controller/ControlEmpleado.php"; 
+                include "../controller/ControlConexion.php";
 
                 $Estado="";
                 $TodasObservaciones="";
@@ -73,9 +73,9 @@
 
                 if (isset($_SESSION['Session'])) {
 
-                    include "../Modelo/Detalle.php";
-                    include "../Control/ControlDetalle.php";
-                    include "../Control/ControlConexion.php";
+                    include "../model/Detalle.php";
+                    include "../controller/ControlDetalle.php";
+                    include "../controller/ControlConexion.php";
                 
                     $cedulaActual=$_SESSION['Session']['Cedula'];
             
@@ -170,9 +170,9 @@
                             </tr>'; 
                     }else{
                         echo $SiguienteSelect='
-                        <tr>
-                        <td>No hay Requerimientos Para Asignar</td>
-                        </tr>
+                        
+                        <span>No hay Requerimientos Para Asignar<span>
+                        
                         '; 
                     }
                 }   
@@ -181,9 +181,9 @@
             case 'Guardar':
 
                 $Resultado="";
-                include "../Modelo/Detalle.php";
-                include "../Control/ControlDetalle.php";
-                include "../Control/ControlConexion.php";
+                include "../model/Detalle.php";
+                include "../controller/ControlDetalle.php";
+                include "../controller/ControlConexion.php";
 
                 $porciones = explode("@", strval($_POST['SelectReque']));
                 $Estado="";
@@ -198,7 +198,7 @@
                 }
                
                 $observacion=$_POST['message'];
-                $FECHA= (new DateTime('now'))->format("Y-m-d h:i:s");
+                $FECHA= (new DateTime('now'))->format("Y-m-d");
    
                
                 $objDetalle=new Detalle("",$FECHA,$observacion,$CapturarSelectRequerimiento, $Estado,$empleado,$empleadoasignado);

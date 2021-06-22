@@ -6,62 +6,100 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
    <!-- Style -->
-    <!-- <link rel="stylesheet" href="./assets/style/style.css"> -->
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <title>Requerimiento</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
 </head>
 <?php
-
-include "./Vista/VistaConsulta.php";                                 
+include "../script/view/VistaMenu.php";
+include "../script/view/VistaConsulta.php";                                 
 ?>
 
-<script>
-    function Menu(){
-        window.location.href="./Menu.php";
-    }
 
-</script>
 <body>
-    <header>
 
-    </header>
+  <header>
+    <div class="header--logo">
+      <a href="../../index.php" class="bt-menu"><img class="header__a--img" src="../img/Logo.png" alt="logo"></a>
+    </div>
+  
+    <div class="header--menu">
+      <span>Menu</span>
+      <nav class="header--nav">
+        <ul class="nav--ul">
+          <li class="nav__ul--li"><a href="#"><span class="icon-house"></span>Quienes Somos</a></li>
+          <li class="nav__ul--li"><a href="#"><span class="icon-suitcase"></span>Servicios</a></li>
+          <li class="nav__ul--li"><a href="#"><span class="icon-rocket"></span>Productos</a></li>
+          <li class="nav__ul--li"><a href="#"><span class="icon-earth"></span>Estructura Organizacional</a>
+          </li>
+          <li class="nav__ul--li"><a href="#"><span class="icon-mail"></span>Contactos</a></li>
+        </ul>
+      </nav>
+  
+    </div>
+  
+    <div class="header--loguin">
+      <img class="header--img" src="../<?php echo $_SESSION['Session']['Foto']?>" alt="" />
+      <div class="header--ventanaLoguin">
+        <a href="../../index.php">Logout</a>
+      </div>
+    </div>
+  
+  </header>
+
+
     <main>
-        <section>
-            <form >
-                <table>
-                    <tr>
-                        <td>Consultar Requerimientos</td>
-                        <td><?php
-                        $selectArea="";
-                        if (isset($_SESSION['Areas'])) {
 
-                            $option="";
-                            foreach ($_SESSION['Areas'] as $key => $value) {
-                                $option=$option.'<option value="'.$value['IDAREA'].'">'.$value['NOMBRE'].'</option>';
-                            }
-                            echo $selectArea='<select name="SelectArea" id="SelectArea">'.$option.'</select>';
-                        }
-                        
-                        ?></td>
-                        <td> <button type="button" id="buscar">Buscar</button></td>
-                        
-                    </tr>
-                </table>
-                <div id="RequerimientoSinAsignar"></div>
-                <div id="Observaciones"></div>
-                <div id="MSJ"></div>
-                <table>
-                    <td> <input type="button"  value="Menu" onclick="Menu();"></td> 
-                </table>
-            </form>
-        </section>
+      <section class="main--submenu">
+      
+        <div class="contenedor">
+          <div class="contenedor-icono">
+            <i class="fas fa-ellipsis-v" onclick="submenu()"></i>
+          </div>
+          <div class="contenedor-submenu">
+            <span class="nombre_usuario">
+              <?php echo $_SESSION['Session']['Nombre']?>
+            </span>
+            <?php echo $menu?>
+          </div>
+          <div class="contenedor-margin"></div>
+        </div>
+      
+      </section>
+
+      <section class="main--consultaJefeArea">
+          <table>
+            <tr>
+              <td colspan="2">Consultar Requerimientos</td>
+            </tr>
+            <tr>
+              <td>
+                <?php 
+                  $selectArea="";
+                  if (isset($_SESSION['Areas'])) {
+                    $option="";
+                      foreach ($_SESSION['Areas'] as $key => $value) {
+                        $option=$option.'<option value="'.$value['IDAREA'].'">'.$value['NOMBRE'].'</option>';
+                      }
+                      echo $selectArea='<select name="SelectArea" id="SelectArea">'.$option.'</select>';
+                  }
+                ?>
+              </td>
+              <td>
+                <button type="button" id="buscar">Buscar</button>
+              </td>
+            </tr>
+          </table>
+          <div id="RequerimientoSinAsignar"></div>
+          <div id="Observaciones"></div>
+          <div id="MSJ"></div>
+      </section>
 
     </main>
 
@@ -71,16 +109,16 @@ include "./Vista/VistaConsulta.php";
             <div class="redessociales">
     
                 <div class="circulo">
-                    <i class="fab fa-twitter-square"></i>
+                  <i class="fab fa-twitter-square"></i>
                 </div>
                 <div class="circulo">
-                    <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-linkedin"></i>
                 </div>
                 <div class="circulo">
-                    <i class="fab fa-telegram"></i>
+                  <i class="fab fa-telegram"></i>
                 </div>
                 <div class="circulo">
-                    <i class="fab fa-facebook-square"></i>
+                  <i class="fab fa-facebook-square"></i>
                 </div>
 
             </div>
@@ -93,144 +131,9 @@ include "./Vista/VistaConsulta.php";
         </div>
     </footer>
 
+<script src="../script/view/javascript/Utilidades.js"> </script>
+<script src="../script/view/javascript/Consultar.js"></script>
 
-
-
-<script>
-
-    ////////////////
-    var btn="";
-        $('#buscar').click(function () {
-
-            if (document.getElementById("Observaciones")!==null) {
-            document.getElementById("Observaciones").innerHTML="";
-            }
-            if (document.getElementById("MSJ")!==null) {
-            document.getElementById("MSJ").innerHTML="";
-            }
-
-            btn="Buscar";
-            var selectarea=document.getElementById("SelectArea").value;
-            var ruta="Accion="+btn+"&SelectArea="+selectarea;
-          
-            $.ajax({
-                url:'./Vista/VistaConsulta.php',
-                type:'POST',
-                data: ruta,
-            }).done(function(res) {
-    
-               $('#RequerimientoSinAsignar').html(res);
-                /////segundo
-                
-              //  document.getElementById("SelectReque")
-
-
-               if (document.getElementById("SelectReque")!==null) {
-
-
-
-                    $('#Seleccionar').click(function () {
-
-                        if (document.getElementById("MSJ")!==null) {
-                            document.getElementById("MSJ").innerHTML="";
-                        }
-
-                        btn="Seleccionar";
-                        var selectarea=document.getElementById("SelectArea").value;
-                        var selectreque=document.getElementById("SelectReque").value;
-                        var ruta="Accion="+btn+"&SelectArea="+selectarea+"&SelectReque="+selectreque;
-
-                        $.ajax({
-                            url:'./Vista/VistaConsulta.php',
-                            type:'POST',
-                            data: ruta,
-                        }).done(function(respu) {
-                            $('#Observaciones').html(respu);
-                            
-                            ////tercero
-                            if (document.getElementById("message")!==null) {
-
-                            //////evento del radio
-                            document.getElementById("cancelar").addEventListener("click",()=>{
-                                document.getElementById("SelectEmpleado").disabled = true;
-                                document.getElementById("SelectEmpleado").selectedIndex="0";
-                            });
-
-                            document.getElementById("asignar").addEventListener("click",()=>{
-                                document.getElementById("SelectEmpleado").disabled = false;
-                            })
-
-                            /////
-                             
-                                $('#Guardar').click(function () {
-                                    
-
-                                    btn="Guardar";
-                                    var control=false;
-                                    var message= $('#message').val();
-                                    var SelectEmpleado=document.getElementById("SelectEmpleado").value;
-                                    var SelectReque=document.getElementById("SelectReque").value;
-
-                                    if (message=="") {
-                                        
-                                        $('#MSJ').html("<h4> porfavor ingrese un comentario</h4>");
-                                    } else {
-
-                                        if (document.getElementById("asignar").checked) {
-
-                                            if (SelectEmpleado==="0") {
-                                                $('#MSJ').html("<h4> porfavor seleccione a quien asignar</h4>");
-                                            }else{
-                                                control=true;
-                                            }
-                                        } else {
-                                            control=true;
-                                        }
-                                    }
-
-
-                                        if (control) {
-                                            var ruta="Accion="+btn+"&SelectReque="+SelectReque+"&SelectEmpleado="+SelectEmpleado+"&message="+message;
-                                   
-                                            $.ajax({
-                                                url:'./Vista/VistaConsulta.php',
-                                                type:'POST',
-                                                data: ruta,
-                                            }).done(function(respu) {
-                                                $('#MSJ').html(respu);
-                                                
-                                            })
-                                            .fail(function() {
-                                                console.log("error");
-                                            })
-                                            .always(function() {
-                                                console.log("complete");
-                                            })
-                                        }
-                                })
-                            }
-                        })
-                        ////tercero
-                        .fail(function() {
-                            console.log("error");
-                        })
-                        .always(function() {
-                            console.log("complete");
-                        })
-                    })
-                }  
-                /////segundo */
-            })
-            .fail(function() {
-                console.log("error");
-            })
-            .always(function() {
-                console.log("complete");
-            })
-        })
-        ////////////
-     
-</script>
 </body>
 
 </html>

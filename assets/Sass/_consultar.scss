@@ -1,0 +1,125 @@
+main {
+  .main--consultaJefeArea {
+    /*  form { */
+    margin-top: 30px;
+
+    table:nth-of-type(1) {
+      width: 80%;
+      text-align: center;
+      margin: auto;
+      background-color: grey;
+      border: 2px solid #ffffff;
+      tr:nth-of-type(1) {
+        font-size: 20px;
+      }
+
+      tr:nth-of-type(2) {
+        td {
+          select {
+            display: block;
+            width: 100%;
+            padding: 0px 0px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            -webkit-transition: border-color 0.15s ease-in-out,
+              -webkit-box-shadow 0.15s ease-in-out;
+            transition: border-color 0.15s ease-in-out,
+              -webkit-box-shadow 0.15s ease-in-out;
+            transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+            transition: border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+          }
+
+          button {
+            color: #fff;
+            background-color: #14c91c;
+            border-color: #14c91c;
+
+            display: inline;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid #000000;
+            padding: 1px 22px;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out,
+              background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
+          }
+        }
+      }
+    }
+
+    #RequerimientoSinAsignar {
+      text-align: center;
+      margin-top: 20px;
+      span {
+        color: #ffffff;
+      }
+    }
+
+    #Observaciones {
+      //margin: auto;
+      width: 100%;
+      .tabla--observaciones {
+        margin-top: 20px;
+        width: 90%;
+        tr {
+          td {
+            textarea {
+              text-align: none;
+              width: 98%;
+            }
+          }
+        }
+        tr:nth-child(4) {
+          td {
+            label:nth-child(2) {
+              color: #ff0000;
+            }
+          }
+        }
+        tr:nth-child(8) {
+          td {
+            button {
+              color: #fff;
+              background-color: #14c91c;
+              border-color: #14c91c;
+
+              display: inline;
+              font-weight: 400;
+              text-align: center;
+              white-space: nowrap;
+              vertical-align: middle;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+              border: 1px solid #000000;
+              padding: 1px 22px;
+              font-size: 1rem;
+              line-height: 1.5;
+              border-radius: 0.25rem;
+              transition: color 0.15s ease-in-out,
+                background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+}

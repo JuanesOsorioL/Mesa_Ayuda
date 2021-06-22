@@ -1,130 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Mis Requerimientos</title>
+  </head>
+
+  <?php
+  include "../script/view/VistaMenu.php";
+  ?>
 
 <body>
-    <header>
-    </header>
 
-    <main>
-        <section>
-            </table>
-            <div id="RequerimientoSinAsignar"></div>
-            <div id="Observaciones"></div>
-            <div id="MSJ"></div>
-                <tr>
-                    <td> <input type="button"  value="Menu" onclick="Menu();"></td> 
-                </tr>
-            <table>
-        </section>
-    </main>
+  <header>
+    <div class="header--logo">
+      <a href="../../index.php" class="bt-menu"><img class="header__a--img" src="../img/Logo.png" alt="logo"></a>
+    </div>
 
-    <footer>
-    </footer>
+    <div class="header--menu">
+      <span>Menu</span>
+      <nav class="header--nav">
+        <ul class="nav--ul">
+          <li class="nav__ul--li">
+            <a href="#">
+              <span class="icon-house"></span>Quienes Somos
+            </a>
+          </li>
+          <li class="nav__ul--li">
+            <a href="#">
+              <span class="icon-suitcase"></span>Servicios
+            </a>
+          </li>
+          <li class="nav__ul--li">
+            <a href="#">
+              <span class="icon-rocket"></span>Productos
+            </a>
+          </li>
+          <li class="nav__ul--li">
+            <a href="#">
+              <span class="icon-earth"></span>Estructura Organizacional
+            </a>
+          </li>
+          <li class="nav__ul--li">
+            <a href="#">
+              <span class="icon-mail"></span>Contactos
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-    <script>
-          function Menu(){
-        window.location.href="./Menu.php";
-    }
-        var btn = "";
-        $(document).ready(main);
+    <div class="header--loguin">
+      <img class="header--img" src="../<?php echo $_SESSION['Session']['Foto']?>" alt="" />
+      <div class="header--ventanaLoguin">
+        <a href="../../index.php">Logout</a>
+      </div>
+    </div>
 
-        function main() {
-            btn = "Cargar";
-            var ruta = "Accion=" + btn;
-            $.ajax({
-                url: './Vista/VistaMisRequerimientos.php',
-                type: 'POST',
-                data: ruta,
-            }).done(function (respu) {
-                $('#RequerimientoSinAsignar').html(respu);
-                seleccionar();
-            }).fail(function () {
-                console.log("error");
-            })
-                .always(function () {
-                    console.log("complete");
-                })
-        };
+  </header>
 
-        function seleccionar() {
+  <main>
 
-            if (document.getElementById("SelectReque") !== null) {
+    <section class="main--submenu">
+      <div class="contenedor">
+        <div class="contenedor-icono">
+          <i class="fas fa-ellipsis-v" onclick="submenu()"></i>
+        </div>
+        <div class="contenedor-submenu">
+          <span class="nombre_usuario">
+          <?php echo $_SESSION['Session']['Nombre']?>
+          </span>
+          <?php echo $menu?>
+        </div>
+        <div class="contenedor-margin"></div>
+      </div>
+    </section>
 
-                $('#Seleccionar').click(function () {
+    <section>
+      <div id="RequerimientoSinAsignar"></div>
+      <div id="Observaciones"></div>
+      <div id="MSJ"></div>
+      <tr>
+        <td> <input type="button"  value="Menu" onclick="Menu();"></td> 
+      </tr>
+    </section>
 
-                    if (document.getElementById("MSJ") !== null) {
-                        document.getElementById("MSJ").innerHTML = "";
-                    }
+  </main>
 
-                    btn = "Seleccionar";
-                    var selectreque = document.getElementById("SelectReque").value;
-                    var ruta = "Accion=" + btn + "&SelectReque=" + selectreque;
+  <footer>
+    <div class="footer-contenedor">
+      <div class="redessociales">
+        <div class="circulo">
+          <i class="fab fa-twitter-square"></i>
+        </div>
+        <div class="circulo">
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <div class="circulo">
+          <i class="fab fa-telegram"></i>
+        </div>
+        <div class="circulo">
+          <i class="fab fa-facebook-square"></i>
+        </div>
+      </div>
+      <div class="texto">
+        <span>Mesa De Ayuda - Colombia</span>
+        <span>© 2020 Copyright</span>
+      </div>
+    </div>
+  </footer>
 
-                    $.ajax({
-                        url: './Vista/VistaMisRequerimientos.php',
-                        type: 'POST',
-                        data: ruta,
-                    }).done(function (respu) {
-                        $('#Observaciones').html(respu);
-                        guardar();
-                    }).fail(function () {
-                        console.log("error");
-                    })
-                        .always(function () {
-                            console.log("complete");
-                        })
-                })
-            }
-        }
-
-        function guardar() {
-
-            if (document.getElementById("message") !== null) {
-
-                $('#Guardar').click(function () {
-
-                    controlradio = "";
-                    btn = "Guardar";
-                    var message = $('#message').val();
-                    var SelectReque = document.getElementById("SelectReque").value;
-
-                    if (message == "") {
-                        $('#MSJ').html("<h4> porfavor ingrese un comentario</h4>");
-                    } else {
-
-                        if (document.getElementsByName("option")[0].checked == true) {
-                            controlradio = "true";
-                        } else {
-                            controlradio = "false";
-                        }
-
-                        var ruta = "Accion=" + btn + "&SelectReque=" + SelectReque + "&message=" + message + "&Stotal=" + controlradio;
-
-                        $.ajax({
-                            url: './Vista/VistaMisRequerimientos.php',
-                            type: 'POST',
-                            data: ruta,
-                        }).done(function (respu) {
-                            $('#MSJ').html(respu);
-                        }).fail(function () {
-                            console.log("error");
-                        }).always(function () {
-                            console.log("complete");
-                        })
-                    }
-                })
-            }
-        }
-
-    </script>
 </body>
-
+  <script src="../script/view/javascript/Utilidades.js"> </script>
+  <script src="../script/view/javascript/MisRequerimientos.js"></script>
 </html>

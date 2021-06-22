@@ -23,9 +23,9 @@
         
             default:
 
-                include "./Modelo/Area.php";
-                include "./Control/ControlArea.php";
-                include "./Control/ControlConexion.php";
+                include "../script/model/Area.php";
+                include "../script/controller/ControlArea.php";
+                include "../script/controller/ControlConexion.php";
                 
 
                 $cedula=$_SESSION['Session']['Cedula'];
@@ -36,17 +36,33 @@
                 
                 if ($respuesta->num_rows!==0) {
                     $_SESSION['Areas'] = $respuesta->fetch_all(MYSQLI_ASSOC);
-                    //print_r($Array); 
                     
-                    $menu='<nav class="section--subnav">
-                    <ul class="subnav--ul" id="submenu">
-                        <li class="ul--li" ><a class="ul__li--a" href="./Consultas.php">Consultas</a></li>
-                        <li class="ul--li" ><a class="ul__li--a" href="">Informes</a></li>
-                        <li class="ul--li" ><a class="ul__li--a" href="./MisRequerimientos.php">Mis Requerimientos</a></li>
-                        <li class="ul--li" ><a class="ul__li--a" href="./Requerimiento.php">Requerimiento</a></li>
-                
-                    </ul>
-                </nav>';
+                    $menu='
+                    <nav class="section--subnav">
+                      <ul class="subnav--ul" id="submenu">
+                        <li class="ul--li" >
+                          <a class="ul__li--a" id="Consultas" href="./Consultas.php">Consultas
+                          </a>
+                        </li>
+
+                        <li class="ul--li" >
+                          <a class="ul__li--a" id="Informe" href="./Informes.php">Informes
+                          </a>
+                        </li>
+                        <li class="ul--li">
+                          <a class="ul__li--a" id="MisRequerimientos"  href="./MisRequerimientos.php">Mis Requerimientos
+                          </a>
+                        </li>
+                        <li class="ul--li">
+                          <a class="ul__li--a" id="Requerimiento" href="./Requerimiento.php">Requerimiento
+                          </a>
+                        </li>
+                          <li class="ul--li">
+                          <a class="ul__li--a" id="Asignarcargo" href="./AsignarCargo.php">Asignar Cargo
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>';
 
                 } else {
 

@@ -43,7 +43,7 @@ header {
           list-style: none;
           a {
             color: #ffffff;
-           // color: #000000;
+            // color: #000000;
             text-decoration: none;
 
             &:hover .nav__ul--li {
@@ -91,7 +91,7 @@ header {
   }
 }
 
-@media (min-width: 769px) and (max-width: 1440px) {
+@media (min-width: 769px) and (max-width: 2440px) {
   header {
     .header--menu {
       padding-top: 13px;

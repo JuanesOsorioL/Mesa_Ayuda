@@ -126,83 +126,76 @@
       }
     }
 
+    function ConsultarSoloNombre(){
+      try {
+        $IDEmpleado=$this->objEmpleado->getIDEmpleado();
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL Consultonlyname("'.$IDEmpleado.'")';
+        $rs = $objControlConexion->ejecutarSelect($comandoSql);
+        $registro = $rs->fetch_array(MYSQLI_BOTH);
+        if ($registro!=null) {
+          $Nombre=$registro["NOMBRE"];
+          return  $Nombre;
+        }
+        $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+        echo "Error: " . $e->getMessage();
+      }
+    }
+
+    function ConsultarSoloEmpleadosPorArea(){
+      try {
+        $Area=$this->objEmpleado->getFKArea();
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL ConsultonlyEmployeeForArea("'.$Area.'")';
+        $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
+        return $respuesta; 
+        $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+      echo "Error: " . $e->getMessage();
+      }
+    }
 
 
-
+    function ReportEmployee(){
+      try {
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql ='CALL ReportEmployee()';
+        $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
+        return $respuesta; 
+        $objControlConexion->cerrarBd();
+      } catch(Exception $e) {
+      echo "Error: " . $e->getMessage();
+      }
+    }
 
 
 
 
     
-
-        function ConsultarSoloEmpleadosPorArea(){///funciona
-            try {
-                $Area=$this->objEmpleado->getFKArea();
-                $objControlConexion = new ControlConexion();
-                 $objControlConexion->abrirBd();
-                $comandoSql = "SELECT IDEMPLEADO ,NOMBRE FROM empleado INNER JOIN cargo_por_empleado ON empleado.IDEMPLEADO=cargo_por_empleado.FKEMPLE where FKCARGO  != 1 && fkAREA = '".$Area."' ";
-                $respuesta=$objControlConexion->ejecutarSelect($comandoSql);
-               /*  if ($respuesta->num_rows===1) {
-                    $control=true;
-                } */
-                return $respuesta; 
-                $objControlConexion->cerrarBd();
-            } catch(Exception $e) {
-                echo "Error: " . $e->getMessage();
-            }
+    function consultarNombre(){
+      try {
+        $IDEmpleado=$this->objEmpleado->getIDEmpleado();
+        $objControlConexion = new ControlConexion();
+        $objControlConexion->abrirBd();
+        $comandoSql = "select NOMBRE from Empleado where IDEMPLEADO = '".$IDEmpleado."' ";
+        $rs = $objControlConexion->ejecutarSelect($comandoSql);
+        $registro = $rs->fetch_array(MYSQLI_BOTH);
+        if ($registro!=null) {
+          $Nombre=$registro["NOMBRE"]; 
+          $this->objEmpleado->setNombre($Nombre);
+        } else {
+          $this->objEmpleado->setNombre("undefine");
         }
-
-       // ////
-
-      
-
-            ///////////
-            function ConsultarSoloNombre(){///funciona
-                try {
-                    $IDEmpleado=$this->objEmpleado->getIDEmpleado();
-                    $objControlConexion = new ControlConexion();
-                     $objControlConexion->abrirBd();
-                    $comandoSql = "select NOMBRE from Empleado where IDEMPLEADO = '".$IDEmpleado."' ";
-                    $rs = $objControlConexion->ejecutarSelect($comandoSql);
-                    $registro = $rs->fetch_array(MYSQLI_BOTH);
-                    if ($registro!=null) {
-                        $Nombre=$registro["NOMBRE"];
-                      //  $this->objEmpleado->setNombre($Nombre);
-                    //} else {
-                     //   $this->objEmpleado->setIDEmpleado("undefine");
-                    }
-                    return  $Nombre;
-                    $objControlConexion->cerrarBd();
-                } catch(Exception $e) {
-                    echo "Error: " . $e->getMessage();
-                }
-            }
-
-            ////////////////     
-            
-
-
-        
-        function consultarNombre(){
-            try {
-                $IDEmpleado=$this->objEmpleado->getIDEmpleado();
-                $objControlConexion = new ControlConexion();
-                 $objControlConexion->abrirBd();
-                $comandoSql = "select NOMBRE from Empleado where IDEMPLEADO = '".$IDEmpleado."' ";
-                $rs = $objControlConexion->ejecutarSelect($comandoSql);
-                $registro = $rs->fetch_array(MYSQLI_BOTH);
-                if ($registro!=null) {
-                    $Nombre=$registro["NOMBRE"]; 
-                    $this->objEmpleado->setNombre($Nombre);
-                } else {
-                    $this->objEmpleado->setNombre("undefine");
-                }
-                $objControlConexion->cerrarBd();
-                return $this->objEmpleado;
-            } catch(Exception $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }
+        $objControlConexion->cerrarBd();
+        return $this->objEmpleado;
+      } catch(Exception $e) {
+          echo "Error: " . $e->getMessage();
+      }
+    }
 
 
     

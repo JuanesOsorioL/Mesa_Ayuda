@@ -90,17 +90,29 @@
 
         function modificarAreaFkempleado() { ////fullciona
             try {
+                $control=true;
                 $id=$this->objArea->getIDArea();
                 $fkemple=$this->objArea->getFKEmple();
                 $objControlConexion = new ControlConexion();
                  $objControlConexion->abrirBd();
                 if ($fkemple===NULL) {
+                     $control=false;
                     $comandoSql = "update area set FKEMPLE = NULL where IDAREA = '".$id."'";
                 } else {
                     $comandoSql = "update area set FKEMPLE = '".$fkemple."' where IDAREA = '".$id."'";
                 }
                 $res=$objControlConexion->ejecutarComandoSql($comandoSql);
-                return $res;
+                
+                
+                  if ($control) {
+                    $comandoSql ='CALL UpdateEmployeeBoss("'.$fkemple.'","'.$id.'")';
+                  } else {
+                    $comandoSql ='CALL UpdateEmployeeBoss(Null,"'.$id.'")';
+                  }
+                  $objControlConexion->ejecutarComandoSql($comandoSql);
+
+
+return $res;
                 $objControlConexion->cerrarBd();
             } catch(Exception $e) {
                 echo "Error: " . $e->getMessage();

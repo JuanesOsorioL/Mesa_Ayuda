@@ -32,21 +32,8 @@ function file_hoja(e) {
   document.getElementById("Hoja_vida").src = objectURLCV;
 }
 
-////////////////////////
-
 $("#Modificar").click(function () {
-  //console.log("holaa");
-  /* 
-                  if (document.getElementById("Observaciones")!==null) {
-                  document.getElementById("Observaciones").innerHTML="";
-                  }
-                  if (document.getElementById("MSJ")!==null) {
-                  document.getElementById("MSJ").innerHTML="";
-                  } */
-
   btn = "Modificar";
-  //var selectarea=document.getElementById("SelectArea").value;
-  // var ruta="Accion="+btn+"&SelectArea="+selectarea;
   let ruta = "Accion=" + btn;
   $.ajax({
     url: "../script/view/VistaC_M_D_Empleado.php",

@@ -7,6 +7,7 @@ main {
   height: 670px;
   background-color: #130201;
 }
+@import "crearrequerimieto";
 @import "alertas";
 @import "administrarempleado";
 @import "gestionarea";
@@ -17,3 +18,5 @@ main {
 @import "footer";
 @import "gestionusuario";
 @import "gestioncargos";
+@import "consultar";
+@import "informe";
