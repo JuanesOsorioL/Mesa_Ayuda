@@ -73,12 +73,22 @@ header {
     .header--ventanaLoguin {
       visibility: hidden;
       height: 40px;
-      width: 68px;
+      width: 60px;
       position: relative;
-      top: 3px;
-      right: 30px;
+      top: -1px;
+      right: 17px;
 
       a {
+        color: #ffffff;
+        padding: 3px 0px;
+        float: right;
+        text-decoration: none;
+        &:hover .nav--ul {
+          text-decoration: underline;
+        }
+      }
+
+      label {
         color: #ffffff;
         padding: 3px 0px;
         float: right;

@@ -27,64 +27,28 @@
 
     <div class="header--menu">
       <span>Menu</span>
-      <nav class="header--nav">
+           <nav class="header--nav">
         <ul class="nav--ul">
-          <li class="nav__ul--li">
-            <a href="#">
-              <span class="icon-house"></span>Quienes Somos
-            </a>
+          <li class="nav__ul--li"><a href="./QuienesSomos.php"><span class="icon-house"></span>Quienes Somos</a></li>
+          <li class="nav__ul--li"><a href="./Servicios.php"><span class="icon-suitcase"></span>Servicios</a></li>
+          <li class="nav__ul--li"><a href="./Productos.php"><span class="icon-rocket"></span>Productos</a></li>
+          <li class="nav__ul--li"><a href="./EstructuraOrganizacional.php"><span class="icon-earth"></span>Estructura Organizacional</a>
           </li>
-          <li class="nav__ul--li">
-            <a href="#">
-              <span class="icon-suitcase"></span>Servicios
-            </a>
-          </li>
-          <li class="nav__ul--li">
-            <a href="#">
-              <span class="icon-rocket"></span>Productos
-            </a>
-          </li>
-          <li class="nav__ul--li">
-            <a href="#">
-              <span class="icon-earth"></span>Estructura Organizacional
-            </a>
-          </li>
-          <li class="nav__ul--li">
-            <a href="#">
-              <span class="icon-mail"></span>Contactos
-            </a>
-          </li>
+          <li class="nav__ul--li"><a href="./Contactos.php"><span class="icon-mail"></span>Contactos</a></li>
         </ul>
       </nav>
     </div>
 
     <div class="header--loguin">
-      <img class="header--img" src="../<?php echo $_SESSION['Session']['Foto']?>" alt="" />
-      <div class="header--ventanaLoguin">
-        <a href="../../index.php">Logout</a>
-      </div>
     </div>
 
   </header>
 
   <main>
 
-  <section class="main--submenu">
-
-    <div class="contenedor">
-      <div class="contenedor-icono">
-        <i class="fas fa-ellipsis-v" onclick="submenu()"></i>
-      </div>
-      <div class="contenedor-submenu">
-        <span class="nombre_usuario">
-        <?php echo $_SESSION['Session']['Nombre']?>
-        </span>
+      <section class="main--submenu">
         <?php echo $menu?>
-      </div>
-      <div class="contenedor-margin"></div>
-    </div>
-
-  </section>
+      </section>
 
   <section class="main--requerimiento">
       <table>
@@ -160,5 +124,5 @@
   </body>
   <script src="../script/view/javascript/Utilidades.js"> </script>
   <script src="../script/view/javascript/Requerimientos.js"></script>
-
+<script src="../script/view/javascript/menu.js"></script>
 </html>

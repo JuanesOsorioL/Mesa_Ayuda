@@ -10,6 +10,7 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Loguin</title>
 </head>
 <body>
@@ -36,11 +37,6 @@
     </div>
 
     <div class="header--loguin">
-        <img class="header--img" src="../img/loguin.jpg" alt="" />
-
-        <div class="header--ventanaLoguin">
-            <a href="./RegistrarEmpleado.php">Registrar</a>
-        </div>
     </div>
 
 </header>
@@ -132,5 +128,5 @@
 
 
 </body>
-
+<script src="../script/view/javascript/menu.js"></script>
 </html>

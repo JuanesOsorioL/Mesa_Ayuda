@@ -8,6 +8,19 @@ main {
   background-color: #130201;
 }
 
+main .contactos {
+  color: #ffffff;
+}
+
+.estructuraOrganizacional .contenedorOrganizacional {
+  color: #ffffff;
+}
+
+.estructuraOrganizacional .contenedorOrganizacional h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 main .main--requerimiento {
   margin-top: 30px;
 }
@@ -569,10 +582,10 @@ header .header--loguin .header--img {
 header .header--loguin .header--ventanaLoguin {
   visibility: hidden;
   height: 40px;
-  width: 68px;
+  width: 60px;
   position: relative;
-  top: 3px;
-  right: 30px;
+  top: -1px;
+  right: 17px;
 }
 
 header .header--loguin .header--ventanaLoguin a {
@@ -583,6 +596,17 @@ header .header--loguin .header--ventanaLoguin a {
 }
 
 header .header--loguin .header--ventanaLoguin a:hover .nav--ul {
+  text-decoration: underline;
+}
+
+header .header--loguin .header--ventanaLoguin label {
+  color: #ffffff;
+  padding: 3px 0px;
+  float: right;
+  text-decoration: none;
+}
+
+header .header--loguin .header--ventanaLoguin label:hover .nav--ul {
   text-decoration: underline;
 }
 
@@ -1072,7 +1096,7 @@ main .main--submenu .contenedor .contenedor-margin {
   width: calc(8.3% * 1);
 }
 
-@media (min-width: 769px) and (max-width: 1440px) {
+@media (min-width: 769px) and (max-width: 2400px) {
   .ampliar {
     height: initial;
   }
